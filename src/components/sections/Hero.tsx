@@ -48,13 +48,6 @@ export const Hero = () => {
         <div className="w-full max-w-3xl mt-4">
           <Countdown targetDate="2026-03-21T10:00:00" />
         </div>
-
-        {/* Decorative Quote */}
-        <div className="mt-12 text-center animate-in fade-in duration-1000" style={{ animationDelay: '1.2s' }}>
-          <p className="text-white/60 text-[10px] uppercase tracking-[0.3em] italic max-w-xs mx-auto">
-            "Bersatu dalam adat, dikuatkan oleh cinta."
-          </p>
-        </div>
       </div>
     </section>
   );
