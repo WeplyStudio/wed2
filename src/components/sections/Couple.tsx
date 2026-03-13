@@ -8,18 +8,19 @@ import { BatakPattern } from "../ui/BatakPattern";
 export const Couple = () => {
   const groomImg = PlaceHolderImages.find((img) => img.id === "groom");
   const brideImg = PlaceHolderImages.find((img) => img.id === "bride");
-  const coupleBg = PlaceHolderImages.find((img) => img.id === "couple-bg");
+  // Updated URL from user request
+  const coupleBgUrl = "https://i.ibb.co.com/WN5cmfHX/bg1.png";
 
   return (
     <section id="couple" className="py-16 md:py-20 bg-[#fffafa] relative overflow-hidden min-h-[700px] flex items-center">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={coupleBg?.imageUrl || ""}
+          src={coupleBgUrl}
           alt="Section Background"
           fill
           className="object-cover opacity-30"
-          data-ai-hint={coupleBg?.imageHint}
+          data-ai-hint="luxurious background"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#fffafa] via-transparent to-[#fffafa] opacity-80" />
       </div>
