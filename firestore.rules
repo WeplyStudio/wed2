@@ -1,0 +1,63 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * FIRESTORE SECURITY RULES - PROTOTYPING PHASE
+     *
+     * CORE PHILOSOPHY:
+     * This ruleset implements a public-facing guestbook model designed for high accessibility
+     * while maintaining basic safeguards. The model prioritizes anonymous interaction,
+     * allowing visitors to contribute blessings and messages to the couple.
+     *
+     * DATA STRUCTURE:
+     * - /guestbook_entries/{entryId}: A flat, top-level collection containing all public messages.
+     *
+     * KEY SECURITY DECISIONS:
+     * - Public Read Access: All guestbook entries are publicly readable to allow all visitors
+     *   to view messages.
+     * - Authenticated Creation: Creation is restricted to authenticated users (including
+     *   anonymous users) to ensure a basic level of identity tracking and prevent bot spam.
+     * - Write Immutability: Update and delete operations are currently disabled. This protects
+     *   the integrity of the guestbook by preventing users from modifying or removing
+     *   messages, as the current schema does not support user-specific ownership tracking.
+     *
+     * PROTOTYPING NOTE:
+     * Data shapes and types are not strictly validated to allow for rapid iteration.
+     * Only relational integrity (ID consistency) and authorization are enforced.
+     */
+
+    // --- Helper Functions ---
+
+    /**
+     * @description Checks if the request is made by an authenticated user.
+     * @returns {boolean} True if the user is signed in (via any provider, including anonymous).
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // --- Collection Rules ---
+
+    /**
+     * @description Stores all public guestbook messages submitted by visitors for the couple.
+     * @path /guestbook_entries/{entryId}
+     * @allow (get, list) for any visitor (public access).
+     * @allow (create) for any authenticated or anonymous user, provided the document ID matches the internal ID.
+     * @deny (update, delete) for all users to prevent tampering with community messages.
+     * @principle Public consumption with authenticated creation; relies on path-to-data consistency.
+     */
+    match /guestbook_entries/{entryId} {
+      allow get, list: if true;
+      
+      allow create: if isSignedIn() && request.resource.data.id == entryId;
+
+      // CRITICAL: Cannot implement owner-only writes. The 'GuestbookEntry' entity is missing 
+      // an 'ownerId' or 'authorId' field to verify who created the entry.
+      // We explicitly deny updates/deletes to prevent any user from altering or wiping 
+      // the guestbook entries of others.
+      allow update, delete: if false; // TODO: Add owner validation once the schema is updated with an ownership field (e.g., authorUid).
+    }
+
+  }
+}

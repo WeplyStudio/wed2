@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "GuestbookEntry": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "GuestbookEntry",
+      "type": "object",
+      "description": "Represents an entry in the digital guestbook, containing a message from a guest.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the GuestbookEntry entity."
+        },
+        "guestName": {
+          "type": "string",
+          "description": "The name of the guest who submitted the message."
+        },
+        "message": {
+          "type": "string",
+          "description": "The personalized message or blessing left by the guest."
+        },
+        "submittedAt": {
+          "type": "string",
+          "description": "The date and time when the guestbook message was submitted.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "guestName",
+        "message",
+        "submittedAt"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/guestbook_entries/{entryId}",
+        "definition": {
+          "entityName": "GuestbookEntry",
+          "schema": {
+            "$ref": "#/backend/entities/GuestbookEntry"
+          },
+          "description": "Stores all public guestbook messages submitted by visitors for the couple. Each document represents a single message.",
+          "params": [
+            {
+              "name": "entryId",
+              "description": "The unique identifier for a specific GuestbookEntry document."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure for the 'Adat & Cinta' application focuses on simplicity and public accessibility for the guestbook feature. A single top-level collection, `/guestbook_entries`, will store all `GuestbookEntry` documents. Each document within this collection will represent a message from a guest to the couple.\n\nThis design achieves **Authorization Independence** by making each `GuestbookEntry` document self-contained. The security rules for this collection will not require `get()` operations on any parent documents or external authorization contexts, as all necessary data for authorization (in this case, public readability and writability) is inherent to the collection's purpose. There are no hierarchical authorization dependencies to manage, thus eliminating the complexity of transactional integrity across related documents for security validation.\n\nTo support **QAPs (Query Authorization Predictability)**, the `/guestbook_entries` collection is designed with a homogeneous security posture: all documents are publicly readable and writable (potentially anonymously). This means that any `list` operation on this collection will return only documents that are universally authorized for viewing. There is no need for complex rule-based filtering on `list` operations because the structure itself ensures that all content within is appropriate for public consumption. This aligns with the principle that 'rules are not filters', as the structure inherently defines the accessible scope of the data. Client-side pagination will be used to handle a large number of entries, ensuring a smooth user experience without impacting security rules."
+  }
+}
