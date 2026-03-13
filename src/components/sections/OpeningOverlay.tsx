@@ -29,7 +29,7 @@ export const OpeningOverlay = () => {
   return (
     <div 
       className={cn(
-        "fixed inset-0 z-[100] transition-all duration-1000 ease-in-out flex items-center justify-center overflow-hidden bg-black",
+        "fixed inset-0 z-[100] transition-all duration-1000 ease-in-out flex items-end justify-center overflow-hidden bg-black",
         isOpen ? "scale-110 opacity-0 pointer-events-none" : "scale-100 opacity-100"
       )}
     >
@@ -42,12 +42,12 @@ export const OpeningOverlay = () => {
           className="object-cover scale-110 opacity-60"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-black/40 to-transparent" />
       </div>
 
-      {/* Luxury Content */}
-      <div className="relative z-10 text-center px-6 max-w-lg">
-        <div className="mb-12 animate-in fade-in slide-in-from-top-12 duration-1000">
+      {/* Luxury Content - Pushed to the bottom */}
+      <div className="relative z-10 text-center px-6 max-w-lg mb-24 md:mb-32">
+        <div className="mb-8 animate-in fade-in slide-in-from-top-12 duration-1000">
           <p className="text-secondary uppercase tracking-[0.6em] text-[10px] font-bold mb-6">You are invited to</p>
           <h1 className="font-headline text-6xl md:text-8xl text-white mb-4 gold-shimmer">
             Raja & Putri
