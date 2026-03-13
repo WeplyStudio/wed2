@@ -25,45 +25,47 @@ export default function Home() {
       <Gift />
       <Guestbook />
       
-      {/* Updated Footer Section */}
-      <footer className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-        {/* Background Image Layer */}
+      {/* Dramatic High-Contrast Footer */}
+      <footer className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-black">
+        {/* Background Image Layer with Heavy Dark Overlays */}
         <div className="absolute inset-0 z-0">
           <Image
             src={footerImg?.imageUrl || ""}
             alt="Footer Background"
             fill
-            className="object-cover opacity-60"
+            className="object-cover opacity-40 grayscale-[20%]"
             priority
           />
-          {/* Elegant Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/20 to-background/90" />
-          <div className="absolute inset-0 bg-black/30" />
+          {/* Intense Radial and Linear Gradients for Depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-3xl mx-auto space-y-16 py-24">
-          <div className="space-y-6">
-            <h2 className="font-headline text-4xl md:text-6xl text-white drop-shadow-md">
+        <div className="relative z-10 max-w-4xl mx-auto space-y-20 py-24">
+          <div className="space-y-8 animate-reveal">
+            <h2 className="font-headline text-5xl md:text-7xl text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] italic">
               Terima Kasih
             </h2>
-            <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-xl mx-auto italic font-headline">
+            <div className="w-24 h-px bg-primary mx-auto" />
+            <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-headline italic">
               Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kami.
             </p>
           </div>
 
-          <div className="space-y-6">
-            <p className="text-white/70 text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">
+          <div className="space-y-10">
+            <p className="text-primary text-xs md:text-sm uppercase tracking-[0.6em] font-bold drop-shadow-sm">
               KAMI YANG BERBAHAGIA
             </p>
-            <h3 className="font-headline text-6xl md:text-8xl lg:text-9xl text-primary drop-shadow-2xl animate-float">
+            <h3 className="font-headline text-7xl md:text-9xl text-primary drop-shadow-[0_10px_20px_rgba(187,72,73,0.3)] animate-float font-bold">
               Binsar & Indrawati
             </h3>
           </div>
 
-          <div className="pt-24">
-            <p className="text-white/40 text-[9px] md:text-[10px] uppercase tracking-[0.5em] font-medium">
-              MADE WITH ♡ FOR BINSAR AND INDRAWATI
+          <div className="pt-32">
+            <p className="text-white/30 text-[10px] uppercase tracking-[0.8em] font-medium">
+              ADAT & CINTA • 2026
             </p>
           </div>
         </div>
