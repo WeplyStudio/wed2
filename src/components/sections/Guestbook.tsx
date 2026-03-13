@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -6,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles, Send, User, MessageSquareText, Loader2, Quote } from "lucide-react";
-import { guestBlessingGenerator } from "@/ai/flows/guest-blessing-generator";
+import { Send, User, MessageSquareText, Loader2, Quote } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { BatakPattern } from "../ui/BatakPattern";
 import { 
@@ -24,7 +22,6 @@ export const Guestbook = () => {
   const { firestore, user } = useFirebase();
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [isGenerating, setIsGenerating] = useState(false);
   const { toast } = useToast();
 
   // Fetch guestbook entries from Firestore
@@ -82,41 +79,6 @@ export const Guestbook = () => {
     });
   };
 
-  const generateAIBlessing = async () => {
-    if (!name) {
-      toast({
-        variant: "destructive",
-        title: "Nama Diperlukan",
-        description: "Silakan masukkan nama Anda terlebih dahulu agar AI dapat mempersonalisasi ucapan.",
-      });
-      return;
-    }
-
-    setIsGenerating(true);
-    try {
-      const result = await guestBlessingGenerator({
-        coupleNames: "Binsar & Indrawati",
-        guestName: name,
-        relationship: "Keluarga/Teman",
-        sentimentKeywords: "Doa tradisional Batak, Berkat, Kebahagiaan",
-      });
-      setMessage(result.blessingMessage);
-      toast({
-        title: "Ucapan Terbuat",
-        description: "AI telah membuatkan ucapan hangat untuk Anda.",
-      });
-    } catch (error) {
-      console.error(error);
-      toast({
-        variant: "destructive",
-        title: "Kesalahan AI",
-        description: "Gagal membuat ucapan otomatis. Silakan coba lagi.",
-      });
-    } finally {
-      setIsGenerating(false);
-    }
-  };
-
   const formatTimestamp = (timestamp: any) => {
     if (!timestamp) return "Baru saja";
     try {
@@ -166,23 +128,7 @@ export const Guestbook = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-primary/70">Pesan & Doa</label>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      className="text-primary hover:bg-primary/5 text-[10px] h-7 px-2 rounded-full font-bold uppercase tracking-tighter"
-                      onClick={generateAIBlessing}
-                      disabled={isGenerating}
-                    >
-                      {isGenerating ? (
-                        <Loader2 className="w-3 h-3 mr-1 animate-spin" />
-                      ) : (
-                        <Sparkles className="w-3 h-3 mr-1" />
-                      )}
-                      Bantuan AI
-                    </Button>
-                  </div>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-primary/70">Pesan & Doa</label>
                   <Textarea 
                     placeholder="Tuliskan doa restu Anda untuk pengantin..." 
                     className="rounded-xl border-primary/10 focus:border-primary/40 bg-muted/20 min-h-[120px] resize-none"
