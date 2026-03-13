@@ -1,3 +1,4 @@
+
 "use client";
 
 import { MapPin, Calendar, Clock, Info, ExternalLink, Leaf } from "lucide-react";
@@ -128,8 +129,8 @@ export const EventDetails = () => {
                 />
               </div>
               
-              <div className="flex flex-1">
-                {/* Vertical Sidebar - Di Sebelah Kiri */}
+              <div className="flex flex-1 flex-row-reverse">
+                {/* Vertical Sidebar - Di Sebelah Kanan (Reverse) */}
                 <div className="bg-[#bb4849] w-16 md:w-20 flex items-center justify-center py-8">
                   <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase">
                     Ulaon Unjuk
