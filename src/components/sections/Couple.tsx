@@ -45,7 +45,7 @@ export const Couple = () => {
           <div className="w-12 h-px bg-primary/20 mx-auto mt-6" />
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-32 max-w-7xl mx-auto">
           {/* Groom */}
           <div className="flex flex-col items-center">
             <div className="relative w-72 h-[450px] md:w-80 md:h-[600px] mb-6 group transition-transform duration-500 hover:scale-105">
