@@ -7,10 +7,13 @@ import { RSVP } from "@/components/sections/RSVP";
 import { Guestbook } from "@/components/sections/Guestbook";
 import { Toaster } from "@/components/ui/toaster";
 import { BatakPattern } from "@/components/ui/BatakPattern";
+import { OpeningOverlay } from "@/components/sections/OpeningOverlay";
 
 export default function Home() {
   return (
     <main className="min-h-screen relative batak-pattern">
+      <OpeningOverlay />
+      
       <Hero />
       <Couple />
       <EventDetails />
