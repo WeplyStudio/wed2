@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -20,7 +19,7 @@ export const Couple = () => {
           alt="Section Background"
           fill
           className="object-cover opacity-30"
-          data-ai-hint="luxurious background"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#fffafa] via-transparent to-[#fffafa] opacity-80" />
       </div>
@@ -58,7 +57,6 @@ export const Couple = () => {
                   alt="Binsar Sitorus"
                   fill
                   className="object-cover"
-                  data-ai-hint="groom portrait"
                 />
               </div>
             </div>
@@ -82,7 +80,6 @@ export const Couple = () => {
                   alt="Indrawati Siburian"
                   fill
                   className="object-cover"
-                  data-ai-hint="bride portrait"
                 />
               </div>
             </div>
