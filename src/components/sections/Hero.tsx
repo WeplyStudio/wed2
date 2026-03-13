@@ -1,14 +1,11 @@
+
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 import { Countdown } from "../ui/Countdown";
-import { Play, Pause } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const heroImg = PlaceHolderImages.find((img) => img.id === "hero-image");
 
   return (
@@ -58,23 +55,6 @@ export const Hero = () => {
           <p className="text-white/60 text-[10px] uppercase tracking-[0.3em] italic max-w-xs mx-auto">
             "Bersatu dalam adat, dikuatkan oleh cinta."
           </p>
-        </div>
-
-        {/* Music Control */}
-        <div className="absolute bottom-12 right-6 md:right-12 z-50">
-          <Button
-            size="icon"
-            variant="outline"
-            className="rounded-full w-14 h-14 md:w-16 md:h-16 bg-white/10 backdrop-blur-xl border-white/20 text-white hover:bg-white/20 transition-all duration-500 group shadow-2xl"
-            onClick={() => setIsPlaying(!isPlaying)}
-          >
-            {isPlaying ? (
-              <Pause className="w-6 h-6 fill-current" />
-            ) : (
-              <Play className="w-6 h-6 ml-1 fill-current" />
-            )}
-            <div className="absolute inset-0 rounded-full border border-white/30 animate-ping opacity-20" />
-          </Button>
         </div>
       </div>
     </section>
