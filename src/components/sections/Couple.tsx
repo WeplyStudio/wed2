@@ -17,10 +17,12 @@ export const Couple = () => {
           src={coupleBgUrl}
           alt="Section Background"
           fill
-          className="object-cover opacity-30"
+          className="object-cover object-center opacity-100"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#fffafa] via-transparent to-[#fffafa] opacity-80" />
+        {/* Subtle overlay to maintain text readability while keeping the BG clear */}
+        <div className="absolute inset-0 bg-white/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#fffafa] via-transparent to-[#fffafa] opacity-60" />
       </div>
 
       {/* Background Pattern Layer */}
