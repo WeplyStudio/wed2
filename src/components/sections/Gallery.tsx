@@ -12,17 +12,24 @@ import {
 } from "@/components/ui/carousel";
 
 export const Gallery = () => {
-  const galleryImages = PlaceHolderImages.filter((img) => img.id.startsWith("gallery-"));
+  const allGalleryImages = PlaceHolderImages.filter((img) => img.id.startsWith("gallery-"));
+  
+  // Split images for slider and grid
+  const sliderImages = allGalleryImages.slice(0, 4);
+  const gridImages = allGalleryImages.slice(2, 8); // Showing some overlaps or unique ones for grid
 
   return (
     <section id="gallery" className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-headline text-4xl md:text-5xl gold-text-gradient mb-4">Our Moments</h2>
-          <p className="text-muted-foreground">Capturing the precious moments of our journey towards forever.</p>
+        <div className="text-center mb-12">
+          <h2 className="font-headline text-3xl md:text-4xl text-foreground/80 mb-2">
+            A Glimpse of Our Journey
+          </h2>
+          <div className="w-12 h-px bg-primary/20 mx-auto mt-4" />
         </div>
 
-        <div className="max-w-5xl mx-auto relative px-12">
+        {/* Top Slider Section */}
+        <div className="max-w-4xl mx-auto relative px-4 md:px-0 mb-8">
           <Carousel
             opts={{
               align: "start",
@@ -31,26 +38,38 @@ export const Gallery = () => {
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {galleryImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="relative aspect-[4/5] group overflow-hidden rounded-lg">
+              {sliderImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-md bg-muted">
                     <Image
                       src={image.imageUrl}
                       alt={image.description}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="object-cover"
                       data-ai-hint={image.imageHint}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <p className="text-accent text-sm italic">{image.description}</p>
-                    </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="text-accent border-accent hover:bg-accent/10" />
-            <CarouselNext className="text-accent border-accent hover:bg-accent/10" />
+            <CarouselPrevious className="left-2 bg-white/50 border-none text-foreground hover:bg-white/80 transition-all" />
+            <CarouselNext className="right-2 bg-white/50 border-none text-foreground hover:bg-white/80 transition-all" />
           </Carousel>
+        </div>
+
+        {/* Bottom Grid Section */}
+        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-3 md:gap-4">
+          {gridImages.map((image, index) => (
+            <div key={index} className="relative aspect-square overflow-hidden rounded-xl shadow-sm bg-muted group">
+              <Image
+                src={image.imageUrl}
+                alt={image.description}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                data-ai-hint={image.imageHint}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
