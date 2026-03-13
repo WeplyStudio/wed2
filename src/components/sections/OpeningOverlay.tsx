@@ -28,10 +28,10 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
       </div>
 
       {/* Content Layer - Pushed to bottom with tighter spacing */}
-      <div className="relative z-10 flex flex-col items-center justify-end text-center px-6 h-full w-full max-w-lg mx-auto pb-20 md:pb-28">
+      <div className="relative z-10 flex flex-col items-center justify-end text-center px-6 h-full w-full max-w-lg mx-auto pb-16 md:pb-24">
         
         {/* Wedding Invitation Label */}
-        <div className="space-y-1 mb-6 animate-in fade-in slide-in-from-top-10 duration-1000">
+        <div className="space-y-0.5 mb-4 animate-in fade-in slide-in-from-top-10 duration-1000">
           <h2 className="font-headline text-2xl md:text-3xl text-primary font-medium italic leading-none">
             Wedding Invitation
           </h2>
@@ -41,15 +41,15 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
         </div>
 
         {/* Main Names */}
-        <div className="mb-10 animate-in fade-in zoom-in duration-1000 delay-300">
-          <h1 className="font-headline text-5xl md:text-7xl text-primary leading-[1.1] drop-shadow-lg">
+        <div className="mb-8 animate-in fade-in zoom-in duration-1000 delay-300">
+          <h1 className="font-headline text-5xl md:text-7xl text-primary leading-[1] drop-shadow-lg">
             Binsar &<br />Indrawati
           </h1>
         </div>
 
         {/* Special Invite Section */}
-        <div className="space-y-6 mb-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
-          <div className="space-y-1">
+        <div className="space-y-4 mb-2 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
+          <div className="space-y-0.5">
             <p className="text-white/80 font-serif italic text-sm md:text-base leading-tight">
               Special Invite To :
             </p>
@@ -63,11 +63,10 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
 
           <Button 
             onClick={onOpen}
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-10 py-6 h-auto group transition-all duration-500 shadow-2xl border border-primary/20"
+            className="bg-primary text-white hover:bg-primary/90 rounded-full px-8 py-2.5 h-auto group transition-all duration-500 shadow-xl border border-primary/20"
           >
-            <Mail className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-            <span className="font-medium text-base tracking-wide">Buka Undangan</span>
+            <Mail className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+            <span className="font-medium text-sm tracking-wide">Buka Undangan</span>
           </Button>
         </div>
       </div>
