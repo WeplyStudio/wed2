@@ -61,15 +61,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bagian Bawah: Nama & Branding yang Diperkecil (Sesuai Permintaan) */}
+          {/* Bagian Bawah: Nama & Branding yang Diperkecil */}
           <div className="flex flex-col items-center">
             {/* Label Branding - Ukuran Kecil */}
             <div className="mb-4 space-y-1">
               <p className="text-white/70 text-[9px] md:text-[10px] uppercase tracking-[0.4em] font-bold">
                 KAMI YANG BERBAHAGIA
-              </p>
-              <p className="text-white/40 text-[8px] uppercase tracking-[0.5em]">
-                ADAT & CINTA • 2026
               </p>
             </div>
 
