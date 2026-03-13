@@ -7,18 +7,6 @@ import Image from "next/image";
 import { CountdownSimple } from "../ui/CountdownSimple";
 
 export const EventDetails = () => {
-  const handleAddToCalendar = () => {
-    const event = {
-      title: "Wedding of Binsar & Indrawati",
-      start: "20260321T100000Z",
-      end: "20260321T210000Z",
-      location: "Porsea, Toba, Indonesia",
-      details: "Traditional Batak Wedding celebration for Binsar and Indrawati."
-    };
-    const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start}/${event.end}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`;
-    window.open(googleCalendarUrl, '_blank');
-  };
-
   return (
     <section id="details" className="relative">
       {/* Verse & Countdown Hero Section */}
@@ -47,17 +35,6 @@ export const EventDetails = () => {
           {/* Countdown */}
           <div className="mb-12">
             <CountdownSimple targetDate="2026-03-21T10:00:00" />
-          </div>
-
-          {/* Google Calendar Button */}
-          <div className="mb-16">
-            <Button 
-              onClick={handleAddToCalendar}
-              className="bg-[#bb4849] hover:bg-[#a33d3e] text-white rounded-lg px-8 py-6 h-auto transition-all shadow-xl flex items-center gap-2"
-            >
-              <Calendar className="w-5 h-5" />
-              <span className="font-medium text-sm">Google Calendar</span>
-            </Button>
           </div>
 
           {/* Verse Text */}
