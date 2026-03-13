@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -26,7 +25,7 @@ export const MusicPlayer = () => {
       <audio
         ref={audioRef}
         loop
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" // Placeholder romantic track
+        src="https://weplystudio.github.io/audiomd/Bona%20Jeges.mp3"
       />
       <Button
         size="icon"
