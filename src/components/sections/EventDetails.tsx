@@ -51,7 +51,7 @@ export const EventDetails = () => {
         </div>
       </div>
 
-      {/* Location Details Section - Redesigned Cards */}
+      {/* Location Details Section */}
       <div className="py-24 bg-[#f8f8f8] relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -70,7 +70,7 @@ export const EventDetails = () => {
               </div>
               
               <div className="flex flex-1">
-                {/* Vertical Sidebar */}
+                {/* Vertical Sidebar - Di Sebelah Kiri */}
                 <div className="bg-[#bb4849] w-16 md:w-20 flex items-center justify-center py-8">
                   <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase">
                     Pamasu-masuon
@@ -129,7 +129,7 @@ export const EventDetails = () => {
               </div>
               
               <div className="flex flex-1">
-                {/* Vertical Sidebar */}
+                {/* Vertical Sidebar - Di Sebelah Kiri */}
                 <div className="bg-[#bb4849] w-16 md:w-20 flex items-center justify-center py-8">
                   <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase">
                     Ulaon Unjuk
