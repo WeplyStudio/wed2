@@ -8,6 +8,12 @@
       "imageHint": "batak wedding"
     },
     {
+      "id": "couple-bg",
+      "description": "Luxurious background for couple section",
+      "imageUrl": "https://picsum.photos/seed/couplebg/1920/1080",
+      "imageHint": "soft pattern background"
+    },
+    {
       "id": "groom",
       "description": "Portrait of the groom",
       "imageUrl": "https://picsum.photos/seed/groom/600/800",
