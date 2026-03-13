@@ -39,11 +39,14 @@ export const EventDetails = () => {
 
           {/* Verse Text */}
           <div className="max-w-2xl mx-auto space-y-6">
-            <p className="text-white/90 text-sm md:text-base leading-relaxed font-headline italic">
-              "Dan firman-Nya: Sebab itu laki-laki akan meninggalkan ayah dan ibunya dan bersatu dengan isterinya, sehingga keduanya itu menjadi satu daging. Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
+            <p className="text-white/90 text-sm md:text-base leading-relaxed font-headline italic whitespace-pre-line">
+              "TUHAN memberkati engkau dan melindungi engkau;{"\n"}
+              TUHAN menyinari engkau dengan wajah-Nya dan memberi engkau kasih karunia;{"\n"}
+              TUHAN menghadapkan wajah-Nya kepadamu{"\n"}
+              dan memberi engkau damai sejahtera"
             </p>
             <p className="text-white text-lg md:text-xl font-headline tracking-widest">
-              - Matius 19 : 5-6 -
+              - Bilangan 6 : 24-26 -
             </p>
           </div>
         </div>
