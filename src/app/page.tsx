@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { OpeningOverlay } from "@/components/sections/OpeningOverlay";
 import { MusicPlayer } from "@/components/ui/MusicPlayer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { InitialsBadge } from "@/components/ui/InitialsBadge";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <MusicPlayer />
       
       <Hero />
+      <InitialsBadge />
       <Couple />
       <EventDetails />
       <Gallery />
