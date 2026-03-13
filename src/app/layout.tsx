@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { FirebaseClientProvider } from '@/firebase';
+import { MobileGuard } from '@/components/ui/MobileGuard';
 
 export const metadata: Metadata = {
   title: 'Adat & Cinta - Wedding of Binsar & Indrawati',
@@ -21,6 +22,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-background text-foreground overflow-x-hidden">
         <FirebaseClientProvider>
+          <MobileGuard />
           {children}
         </FirebaseClientProvider>
       </body>
