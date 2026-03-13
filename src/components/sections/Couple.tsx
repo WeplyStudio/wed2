@@ -10,18 +10,18 @@ export const Couple = () => {
   const coupleBgUrl = "https://i.ibb.co.com/6013P5SJ/Desain-tanpa-judul-20260313-163359-0000.png";
 
   return (
-    <section id="couple" className="py-20 md:py-32 bg-[#fffafa] relative overflow-hidden min-h-[1000px] flex items-center">
+    <section id="couple" className="py-20 md:py-32 bg-white relative overflow-hidden min-h-[1000px] flex items-center">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
           src={coupleBgUrl}
           alt="Section Background"
           fill
-          className="object-cover object-center opacity-100"
+          className="object-cover object-center opacity-40"
           priority
         />
-        {/* Subtle overlay to maintain text readability while keeping the BG clear */}
-        <div className="absolute inset-0 bg-white/5" />
+        {/* Transparent overlay for better text contrast */}
+        <div className="absolute inset-0 bg-white/10" />
       </div>
 
       {/* Background Pattern Layer */}

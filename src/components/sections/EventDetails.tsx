@@ -54,18 +54,18 @@ export const EventDetails = () => {
       </div>
 
       {/* Location Details Section */}
-      <div className="py-24 relative z-10 overflow-hidden min-h-[800px] flex items-center">
-        {/* Background Image - Updated to the correct URL and optimized scaling/transparency */}
+      <div className="py-24 relative z-10 overflow-hidden min-h-[800px] flex items-center bg-white">
+        {/* Background Image - With Transparency */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://i.ibb.co.com/s933d4fP/Desain-tanpa-judul-20260313-163535-0000.png"
             alt="Section Background"
             fill
-            className="object-cover object-center opacity-100"
+            className="object-cover object-center opacity-40"
             priority
           />
-          {/* Minimal overlay to keep background clear but text readable */}
-          <div className="absolute inset-0 bg-white/5" />
+          {/* Subtle overlay */}
+          <div className="absolute inset-0 bg-white/10" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
