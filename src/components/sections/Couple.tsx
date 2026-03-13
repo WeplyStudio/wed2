@@ -10,7 +10,7 @@ export const Couple = () => {
   const coupleBgUrl = "https://i.ibb.co.com/WN5cmfHX/bg1.png";
 
   return (
-    <section id="couple" className="py-16 md:py-20 bg-[#fffafa] relative overflow-hidden min-h-[700px] flex items-center">
+    <section id="couple" className="py-16 md:py-24 bg-[#fffafa] relative overflow-hidden min-h-[850px] flex items-center">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -34,24 +34,24 @@ export const Couple = () => {
 
       <div className="container mx-auto px-4 relative z-10 text-center">
         {/* Header Section */}
-        <div className="mb-10 max-w-lg mx-auto">
+        <div className="mb-12 max-w-xl mx-auto">
           <p className="font-headline text-base text-muted-foreground mb-1 uppercase tracking-widest">Pasangan</p>
           <h2 className="font-headline text-4xl md:text-5xl text-primary mb-4">Pengantin</h2>
-          <p className="text-muted-foreground text-xs md:text-sm leading-relaxed italic px-4">
+          <p className="text-muted-foreground text-sm md:text-base leading-relaxed italic px-4">
             "Tuhan membuat segala sesuatu indah pada waktunya. Indah saat Dia mempertemukan, 
             indah saat Dia menumbuhkan kasih, dan indah saat Dia mempersatukan kami 
             dalam suatu ikatan pernikahan Kudus."
           </p>
-          <div className="w-10 h-px bg-primary/20 mx-auto mt-4" />
+          <div className="w-12 h-px bg-primary/20 mx-auto mt-6" />
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14 max-w-3xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 max-w-5xl mx-auto">
           {/* Groom */}
           <div className="flex flex-col items-center">
-            <div className="relative w-48 h-64 md:w-56 md:h-[360px] mb-4 group transition-transform duration-500 hover:scale-105">
+            <div className="relative w-64 h-80 md:w-72 md:h-[480px] mb-6 group transition-transform duration-500 hover:scale-105">
               {/* Custom asymmetrical rounded frame */}
-              <div className="absolute inset-0 rounded-[40px_180px_40px_40px] border-[6px] border-primary z-10 shadow-lg pointer-events-none" />
-              <div className="absolute inset-[6px] rounded-[34px_174px_34px_34px] overflow-hidden">
+              <div className="absolute inset-0 rounded-[50px_200px_50px_50px] border-[8px] border-primary z-10 shadow-xl pointer-events-none" />
+              <div className="absolute inset-[8px] rounded-[42px_192px_42px_42px] overflow-hidden">
                 <Image
                   src={groomImg?.imageUrl || ""}
                   alt="Binsar Sitorus"
@@ -60,22 +60,22 @@ export const Couple = () => {
                 />
               </div>
             </div>
-            <h3 className="font-headline text-xl md:text-2xl text-primary mb-1">Binsar Sitorus</h3>
-            <p className="text-muted-foreground text-[9px] uppercase tracking-widest mb-1">Putra Dari:</p>
-            <p className="text-foreground text-xs font-medium">Bp. L. Sitorus & Ibu R. Marpaung</p>
+            <h3 className="font-headline text-2xl md:text-3xl text-primary mb-1">Binsar Sitorus</h3>
+            <p className="text-muted-foreground text-[10px] uppercase tracking-widest mb-1">Putra Dari:</p>
+            <p className="text-foreground text-sm font-medium">Bp. L. Sitorus & Ibu R. Marpaung</p>
           </div>
 
           {/* Divider */}
-          <div className="hidden md:flex flex-col items-center justify-center h-full pt-10">
-            <span className="font-headline text-4xl text-primary/20 italic">&</span>
+          <div className="hidden md:flex flex-col items-center justify-center h-full pt-16">
+            <span className="font-headline text-5xl text-primary/20 italic">&</span>
           </div>
 
           {/* Bride */}
           <div className="flex flex-col items-center">
-            <div className="relative w-48 h-64 md:w-56 md:h-[360px] mb-4 group transition-transform duration-500 hover:scale-105">
-              {/* Custom asymmetrical rounded frame (mirrored curve for the bride looks better) */}
-              <div className="absolute inset-0 rounded-[180px_40px_40px_40px] border-[6px] border-primary z-10 shadow-lg pointer-events-none" />
-              <div className="absolute inset-[6px] rounded-[174px_34px_34px_34px] overflow-hidden">
+            <div className="relative w-64 h-80 md:w-72 md:h-[480px] mb-6 group transition-transform duration-500 hover:scale-105">
+              {/* Custom asymmetrical rounded frame (mirrored curve for the bride) */}
+              <div className="absolute inset-0 rounded-[200px_50px_50px_50px] border-[8px] border-primary z-10 shadow-xl pointer-events-none" />
+              <div className="absolute inset-[8px] rounded-[192px_42px_42px_42px] overflow-hidden">
                 <Image
                   src={brideImg?.imageUrl || ""}
                   alt="Indrawati Siburian"
@@ -84,9 +84,9 @@ export const Couple = () => {
                 />
               </div>
             </div>
-            <h3 className="font-headline text-xl md:text-2xl text-primary mb-1">Indrawati Siburian</h3>
-            <p className="text-muted-foreground text-[9px] uppercase tracking-widest mb-1">Putri Dari:</p>
-            <p className="text-foreground text-xs font-medium">Bp. F. Siburian (+) & Ibu S. Sianturi</p>
+            <h3 className="font-headline text-2xl md:text-3xl text-primary mb-1">Indrawati Siburian</h3>
+            <p className="text-muted-foreground text-[10px] uppercase tracking-widest mb-1">Putri Dari:</p>
+            <p className="text-foreground text-sm font-medium">Bp. F. Siburian (+) & Ibu S. Sianturi</p>
           </div>
         </div>
       </div>
