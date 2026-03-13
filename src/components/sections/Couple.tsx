@@ -39,11 +39,6 @@ export const Couple = () => {
         <div className="mb-16 md:mb-24 max-w-xl mx-auto">
           <p className="font-headline text-base text-muted-foreground mb-1 uppercase tracking-[0.3em]">Pasangan</p>
           <h2 className="font-headline text-4xl md:text-5xl text-primary mb-6">Pengantin</h2>
-          <p className="text-muted-foreground text-sm md:text-base leading-relaxed italic px-4">
-            "Tuhan membuat segala sesuatu indah pada waktunya. Indah saat Dia mempertemukan, 
-            indah saat Dia menumbuhkan kasih, dan indah saat Dia mempersatukan kami 
-            dalam suatu ikatan pernikahan Kudus."
-          </p>
           <div className="w-12 h-px bg-primary/20 mx-auto mt-8" />
         </div>
 
