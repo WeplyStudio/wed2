@@ -69,10 +69,6 @@ export const EventDetails = () => {
               - Matius 19 : 5-6 -
             </p>
           </div>
-          
-          <div className="mt-20 opacity-30">
-            <p className="text-white text-[10px] tracking-[0.4em] uppercase">AESTECWEDDING</p>
-          </div>
         </div>
       </div>
 
