@@ -1,7 +1,7 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 interface CountdownProps {
   targetDate: string;
@@ -47,16 +47,20 @@ export const Countdown = ({ targetDate }: CountdownProps) => {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-2 md:gap-4 w-full max-w-xl mx-auto px-4">
-      {items.map((item) => (
+    <div className="grid grid-cols-4 gap-2 md:gap-4 w-full max-w-2xl mx-auto">
+      {items.map((item, idx) => (
         <div 
           key={item.label}
-          className="bg-background/20 backdrop-blur-md border border-accent/20 rounded-xl p-3 md:p-4 flex flex-col items-center justify-center group hover:border-accent/50 transition-colors"
+          className={cn(
+            "glass-card rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center transition-all duration-500 hover:scale-105 hover:bg-white/20",
+            "animate-in fade-in slide-in-from-bottom-8"
+          )}
+          style={{ animationDelay: `${0.8 + idx * 0.1}s` }}
         >
-          <span className="font-headline text-2xl md:text-3xl text-accent font-bold">
+          <span className="font-headline text-2xl md:text-4xl text-white font-medium tracking-tighter">
             {String(item.value).padStart(2, '0')}
           </span>
-          <span className="text-[10px] md:text-xs text-accent/80 tracking-widest mt-1">
+          <span className="text-[9px] md:text-[10px] text-white/70 tracking-[0.2em] mt-2 font-bold uppercase">
             {item.label}
           </span>
         </div>

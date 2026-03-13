@@ -1,76 +1,79 @@
-
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/app/lib/placeholder-images";
-import { BatakPattern } from "../ui/BatakPattern";
 import { Countdown } from "../ui/Countdown";
-import { Music, Music2, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
-  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const heroImg = PlaceHolderImages.find((img) => img.id === "hero-image");
 
   return (
-    <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden">
-      {/* Background with subtle animation */}
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImg?.imageUrl || ""}
-          alt={heroImg?.description || "Wedding Hero"}
+          alt="Wedding Background"
           fill
-          className="object-cover opacity-70 scale-105 animate-fade-in"
+          className="object-cover opacity-90 scale-105 animate-fade-in"
           priority
-          data-ai-hint="batak wedding"
+          data-ai-hint="elegant couple"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-background z-10" />
+        <div className="absolute inset-0 hero-gradient z-10" />
       </div>
 
-      {/* Main Content Container */}
-      <div className="relative z-20 w-full h-full flex flex-col items-center justify-between py-12 px-4 max-w-4xl mx-auto">
+      {/* Main Content */}
+      <div className="relative z-20 w-full h-full flex flex-col items-center justify-center px-4 pt-20">
         
-        {/* Header Section */}
-        <div className="text-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          <BatakPattern className="w-16 h-16 mx-auto mb-4 opacity-80" />
-          <p className="text-accent uppercase tracking-[0.4em] text-xs font-bold mb-8">The Wedding Of</p>
-          
-          <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl mb-4 leading-tight">
-            <span className="block gold-text-gradient">Raja &</span>
-            <span className="block gold-text-gradient">Putri</span>
+        {/* Header Label */}
+        <div className="overflow-hidden mb-6">
+          <p className="text-white/90 uppercase tracking-[0.5em] text-[10px] md:text-xs font-semibold animate-reveal" style={{ animationDelay: '0.2s' }}>
+            The Wedding Of
+          </p>
+        </div>
+        
+        {/* Couple Names */}
+        <div className="text-center mb-12">
+          <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl text-white mb-4 animate-reveal" style={{ animationDelay: '0.4s' }}>
+            Raja & Putri
           </h1>
-          
-          <div className="w-16 h-px bg-accent/50 mx-auto mb-6" />
-          <p className="font-headline text-2xl md:text-4xl text-foreground font-light tracking-[0.2em]">
-            25 . 10 . 2025
-          </p>
-        </div>
-
-        {/* Footer Section with Countdown */}
-        <div className="w-full text-center animate-slide-up space-y-8" style={{ animationDelay: '0.6s' }}>
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-8 bg-accent/30" />
-            <span className="text-accent text-[10px] uppercase tracking-widest">Our Journey Towards Forever</span>
-            <div className="h-px w-8 bg-accent/30" />
+          <div className="overflow-hidden">
+            <p className="font-headline text-xl md:text-3xl text-white/90 tracking-[0.1em] animate-reveal" style={{ animationDelay: '0.6s' }}>
+              25 . 10 . 2025
+            </p>
           </div>
-          
+        </div>
+
+        {/* Countdown Section */}
+        <div className="w-full max-w-3xl mt-8">
           <Countdown targetDate="2025-10-25T10:00:00" />
-          
-          <p className="text-accent/80 text-xs uppercase tracking-tighter italic max-w-xs mx-auto">
-            "Ai songon i do molo mangula na denggan, na uli i do dapothononna."
+        </div>
+
+        {/* Decorative Quote */}
+        <div className="mt-16 text-center animate-in fade-in duration-1000" style={{ animationDelay: '1.2s' }}>
+          <p className="text-white/60 text-[10px] uppercase tracking-[0.3em] italic max-w-xs mx-auto">
+            "Bersatu dalam adat, dikuatkan oleh cinta."
           </p>
         </div>
 
-        {/* Floating Music Toggle */}
-        <div className="fixed bottom-6 right-6 z-50">
+        {/* Music Control - Circular Play Button matching screenshot style */}
+        <div className="absolute bottom-12 right-6 md:right-12 z-50">
           <Button
             size="icon"
             variant="outline"
-            className="rounded-full w-12 h-12 bg-background/20 backdrop-blur-md border-accent/20 text-accent hover:bg-accent/10 animate-pulse"
-            onClick={() => setIsMuted(!isMuted)}
+            className="rounded-full w-14 h-14 md:w-16 md:h-16 bg-white/10 backdrop-blur-xl border-white/20 text-white hover:bg-white/20 transition-all duration-500 group shadow-2xl"
+            onClick={() => setIsPlaying(!isPlaying)}
           >
-            {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+            {isPlaying ? (
+              <Pause className="w-6 h-6 fill-current" />
+            ) : (
+              <Play className="w-6 h-6 ml-1 fill-current" />
+            )}
+            <div className="absolute inset-0 rounded-full border border-white/30 animate-ping opacity-20" />
           </Button>
         </div>
       </div>
