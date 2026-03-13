@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
@@ -21,6 +20,10 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
     if (auth) {
       initiateAnonymousSignIn(auth);
     }
+    
+    // Dispatch a custom event to trigger music autoplay in MusicPlayer
+    window.dispatchEvent(new CustomEvent('open-invitation'));
+    
     onOpen();
   };
 

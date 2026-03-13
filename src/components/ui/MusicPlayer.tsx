@@ -9,6 +9,27 @@ export const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  useEffect(() => {
+    const handleOpenInvitation = () => {
+      if (audioRef.current && !isPlaying) {
+        audioRef.current.play()
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((err) => {
+            console.log("Audio play blocked or failed:", err);
+          });
+      }
+    };
+
+    // Listen for the custom event dispatched when invitation is opened
+    window.addEventListener('open-invitation', handleOpenInvitation);
+    
+    return () => {
+      window.removeEventListener('open-invitation', handleOpenInvitation);
+    };
+  }, [isPlaying]);
+
   const togglePlay = () => {
     if (audioRef.current) {
       if (isPlaying) {
