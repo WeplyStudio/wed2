@@ -7,7 +7,6 @@ import { BatakPattern } from "../ui/BatakPattern";
 export const Couple = () => {
   const groomImg = PlaceHolderImages.find((img) => img.id === "groom");
   const brideImg = PlaceHolderImages.find((img) => img.id === "bride");
-  // Updated URL from user request
   const coupleBgUrl = "https://i.ibb.co.com/WN5cmfHX/bg1.png";
 
   return (
@@ -34,10 +33,10 @@ export const Couple = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center">
-        {/* Header Section - Scaled Down */}
+        {/* Header Section */}
         <div className="mb-10 max-w-lg mx-auto">
           <p className="font-headline text-base text-muted-foreground mb-1 uppercase tracking-widest">Pasangan</p>
-          <h2 className="font-headline text-4xl md:text-5xl text-primary mb-4 gold-shimmer">Pengantin</h2>
+          <h2 className="font-headline text-4xl md:text-5xl text-primary mb-4">Pengantin</h2>
           <p className="text-muted-foreground text-xs md:text-sm leading-relaxed italic px-4">
             "Tuhan membuat segala sesuatu indah pada waktunya. Indah saat Dia mempertemukan, 
             indah saat Dia menumbuhkan kasih, dan indah saat Dia mempersatukan kami 
@@ -50,8 +49,9 @@ export const Couple = () => {
           {/* Groom */}
           <div className="flex flex-col items-center">
             <div className="relative w-48 h-64 md:w-56 md:h-[360px] mb-4 group transition-transform duration-500 hover:scale-105">
-              <div className="absolute inset-0 rounded-t-full border-[6px] border-primary z-10 shadow-lg pointer-events-none" />
-              <div className="absolute inset-[6px] rounded-t-full overflow-hidden">
+              {/* Custom asymmetrical rounded frame */}
+              <div className="absolute inset-0 rounded-[40px_180px_40px_40px] border-[6px] border-primary z-10 shadow-lg pointer-events-none" />
+              <div className="absolute inset-[6px] rounded-[34px_174px_34px_34px] overflow-hidden">
                 <Image
                   src={groomImg?.imageUrl || ""}
                   alt="Binsar Sitorus"
@@ -73,8 +73,9 @@ export const Couple = () => {
           {/* Bride */}
           <div className="flex flex-col items-center">
             <div className="relative w-48 h-64 md:w-56 md:h-[360px] mb-4 group transition-transform duration-500 hover:scale-105">
-              <div className="absolute inset-0 rounded-t-full border-[6px] border-primary z-10 shadow-lg pointer-events-none" />
-              <div className="absolute inset-[6px] rounded-t-full overflow-hidden">
+              {/* Custom asymmetrical rounded frame (mirrored curve for the bride looks better) */}
+              <div className="absolute inset-0 rounded-[180px_40px_40px_40px] border-[6px] border-primary z-10 shadow-lg pointer-events-none" />
+              <div className="absolute inset-[6px] rounded-[174px_34px_34px_34px] overflow-hidden">
                 <Image
                   src={brideImg?.imageUrl || ""}
                   alt="Indrawati Siburian"
