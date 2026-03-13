@@ -7,6 +7,7 @@ import { Gift } from "@/components/sections/Gift";
 import { Toaster } from "@/components/ui/toaster";
 import { OpeningOverlay } from "@/components/sections/OpeningOverlay";
 import { MusicPlayer } from "@/components/ui/MusicPlayer";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 
@@ -47,33 +48,37 @@ export default function Home() {
         <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center h-full pt-40 pb-16">
           
           {/* Bagian Atas: Ucapan Terima Kasih */}
-          <div className="space-y-6 mb-24 animate-reveal">
-            <h2 className="font-headline text-3xl md:text-4xl text-white italic">
-              Terima Kasih
-            </h2>
-            <div className="space-y-3 max-w-md mx-auto">
+          <div className="space-y-6 mb-24">
+            <ScrollReveal>
+              <h2 className="font-headline text-3xl md:text-4xl text-white italic">
+                Terima Kasih
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal className="space-y-3 max-w-md mx-auto" delay={200}>
               <p className="text-white/90 text-xs md:text-sm leading-relaxed font-body italic">
                 Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kami.
               </p>
               <p className="text-white/60 text-[9px] md:text-[10px] font-body italic uppercase tracking-widest">
                 Wassalamu'alaikum warahmatullahi wabarakatuh
               </p>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Bagian Bawah: Nama & Branding yang Diperkecil */}
           <div className="flex flex-col items-center">
             {/* Label Branding - Ukuran Kecil */}
-            <div className="mb-4 space-y-1">
+            <ScrollReveal className="mb-4 space-y-1" delay={400}>
               <p className="text-white/70 text-[9px] md:text-[10px] uppercase tracking-[0.4em] font-bold">
                 KAMI YANG BERBAHAGIA
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Nama Utama - Ukuran Proporsional (Kecil & Elegan) */}
-            <h3 className="font-headline text-2xl md:text-4xl text-white font-medium animate-reveal" style={{ animationDelay: '0.4s' }}>
-              Binsar & Indrawati
-            </h3>
+            <ScrollReveal delay={600}>
+              <h3 className="font-headline text-2xl md:text-4xl text-white font-medium">
+                Binsar & Indrawati
+              </h3>
+            </ScrollReveal>
           </div>
         </div>
       </footer>

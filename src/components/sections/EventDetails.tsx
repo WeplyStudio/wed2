@@ -4,6 +4,7 @@ import { MapPin, Clock, ExternalLink, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { CountdownSimple } from "../ui/CountdownSimple";
+import { ScrollReveal } from "../ui/ScrollReveal";
 
 export const EventDetails = () => {
   return (
@@ -21,35 +22,39 @@ export const EventDetails = () => {
         
         <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
           {/* Icon */}
-          <div className="mb-6">
+          <ScrollReveal className="mb-6">
             <div className="animate-float">
               <Leaf className="w-12 h-12 text-white opacity-80" />
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Heading */}
           <div className="mb-8">
-            <h3 className="text-white text-lg md:text-xl font-headline tracking-widest mb-2 uppercase animate-reveal" style={{ animationDelay: '0.2s' }}>Hitung Mundur</h3>
-            <h2 className="text-[#bb4849] text-4xl md:text-6xl font-headline italic animate-reveal" style={{ animationDelay: '0.4s' }}>Menuju Hari Bahagia</h2>
+            <ScrollReveal delay={200}>
+              <h3 className="text-white text-lg md:text-xl font-headline tracking-widest mb-2 uppercase">Hitung Mundur</h3>
+            </ScrollReveal>
+            <ScrollReveal delay={400}>
+              <h2 className="text-[#bb4849] text-4xl md:text-6xl font-headline italic">Menuju Hari Bahagia</h2>
+            </ScrollReveal>
           </div>
 
           {/* Countdown */}
-          <div className="mb-12">
+          <ScrollReveal className="mb-12" delay={600}>
             <CountdownSimple targetDate="2026-03-21T10:00:00" />
-          </div>
+          </ScrollReveal>
 
           {/* Verse Text */}
-          <div className="max-w-2xl mx-auto space-y-6">
-            <p className="text-white/90 text-sm md:text-base leading-relaxed font-headline italic whitespace-pre-line animate-in fade-in duration-1000" style={{ animationDelay: '0.8s' }}>
+          <ScrollReveal className="max-w-2xl mx-auto space-y-6" delay={800}>
+            <p className="text-white/90 text-sm md:text-base leading-relaxed font-headline italic whitespace-pre-line">
               "TUHAN memberkati engkau dan melindungi engkau;{"\n"}
               TUHAN menyinari engkau dengan wajah-Nya dan memberi engkau kasih karunia;{"\n"}
               TUHAN menghadapkan wajah-Nya kepadamu{"\n"}
               dan memberi engkau damai sejahtera"
             </p>
-            <p className="text-white text-lg md:text-xl font-headline tracking-widest animate-in fade-in duration-1000" style={{ animationDelay: '1s' }}>
+            <p className="text-white text-lg md:text-xl font-headline tracking-widest">
               - Bilangan 6 : 24-26 -
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 
@@ -72,7 +77,7 @@ export const EventDetails = () => {
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             
             {/* Ceremony Card */}
-            <div className="bg-white/95 backdrop-blur-sm shadow-2xl overflow-hidden rounded-sm flex flex-col animate-in fade-in slide-in-from-bottom-10 duration-700">
+            <ScrollReveal className="bg-white/95 backdrop-blur-sm shadow-2xl overflow-hidden rounded-sm flex flex-col" delay={200}>
               {/* Image Header */}
               <div className="relative h-64 w-full">
                 <Image
@@ -128,10 +133,10 @@ export const EventDetails = () => {
                   </Button>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Reception Card */}
-            <div className="bg-white/95 backdrop-blur-sm shadow-2xl overflow-hidden rounded-sm flex flex-col animate-in fade-in slide-in-from-bottom-10 duration-700 delay-200">
+            <ScrollReveal className="bg-white/95 backdrop-blur-sm shadow-2xl overflow-hidden rounded-sm flex flex-col" delay={400}>
               {/* Image Header */}
               <div className="relative h-64 w-full">
                 <Image
@@ -187,7 +192,7 @@ export const EventDetails = () => {
                   </Button>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>

@@ -17,6 +17,7 @@ import {
 import { collection, query, orderBy, doc, serverTimestamp } from "firebase/firestore";
 import { formatDistanceToNow } from "date-fns";
 import { id as localeId } from "date-fns/locale";
+import { ScrollReveal } from "../ui/ScrollReveal";
 
 export const Guestbook = () => {
   const { firestore, user } = useFirebase();
@@ -98,18 +99,18 @@ export const Guestbook = () => {
       <BatakPattern className="absolute -bottom-10 -left-10 w-40 h-40 opacity-5 -rotate-12" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
+        <ScrollReveal className="text-center mb-16 max-w-2xl mx-auto">
           <p className="font-headline text-sm text-primary uppercase tracking-[0.3em] mb-2">Buku Tamu</p>
           <h2 className="font-headline text-4xl md:text-5xl gold-text-gradient mb-4">Ucapan & Doa Restu</h2>
           <div className="w-16 h-px bg-primary/20 mx-auto mb-6" />
           <p className="text-muted-foreground italic">
             "Kehadiran dan doa restu Anda adalah kado terindah bagi kami."
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid lg:grid-cols-5 gap-8 max-w-6xl mx-auto items-start">
           {/* Post Message Form */}
-          <div className="lg:col-span-2 sticky top-24">
+          <ScrollReveal className="lg:col-span-2 sticky top-24" delay={200}>
             <Card className="bg-white/80 backdrop-blur-sm border-primary/10 shadow-2xl rounded-3xl overflow-hidden">
               <div className="bg-primary p-6 text-white">
                 <h3 className="font-headline text-xl flex items-center gap-2">
@@ -145,10 +146,10 @@ export const Guestbook = () => {
                 </Button>
               </CardContent>
             </Card>
-          </div>
+          </ScrollReveal>
 
           {/* Message List - Scrollable with custom styling */}
-          <div className="lg:col-span-3 space-y-6 max-h-[700px] overflow-y-auto pr-2 custom-scrollbar scroll-smooth">
+          <ScrollReveal className="lg:col-span-3 space-y-6 max-h-[700px] overflow-y-auto pr-2 custom-scrollbar scroll-smooth" delay={400}>
             {isLoading ? (
               <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
                 <Loader2 className="w-8 h-8 animate-spin mb-4 text-primary" />
@@ -161,32 +162,34 @@ export const Guestbook = () => {
               </div>
             ) : (
               messages.map((msg, index) => (
-                <Card key={msg.id} className="bg-white border-none shadow-sm rounded-2xl group transition-all hover:shadow-md hover:-translate-y-1">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                        <User className="w-6 h-6" />
-                      </div>
-                      <div className="flex-1 space-y-2">
-                        <div className="flex justify-between items-center">
-                          <h4 className="font-headline text-lg text-primary">{msg.guestName}</h4>
-                          <span className="text-[10px] uppercase text-muted-foreground/60 tracking-wider font-bold">
-                            {formatTimestamp(msg.submittedAt)}
-                          </span>
+                <ScrollReveal key={msg.id} delay={index * 50}>
+                  <Card className="bg-white border-none shadow-sm rounded-2xl group transition-all hover:shadow-md hover:-translate-y-1">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                          <User className="w-6 h-6" />
                         </div>
-                        <div className="relative">
-                          <Quote className="absolute -top-1 -left-1 w-8 h-8 text-primary/5 -z-0" />
-                          <p className="text-foreground/80 leading-relaxed text-sm italic relative z-10">
-                            "{msg.message}"
-                          </p>
+                        <div className="flex-1 space-y-2">
+                          <div className="flex justify-between items-center">
+                            <h4 className="font-headline text-lg text-primary">{msg.guestName}</h4>
+                            <span className="text-[10px] uppercase text-muted-foreground/60 tracking-wider font-bold">
+                              {formatTimestamp(msg.submittedAt)}
+                            </span>
+                          </div>
+                          <div className="relative">
+                            <Quote className="absolute -top-1 -left-1 w-8 h-8 text-primary/5 -z-0" />
+                            <p className="text-foreground/80 leading-relaxed text-sm italic relative z-10">
+                              "{msg.message}"
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </ScrollReveal>
               ))
             )}
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

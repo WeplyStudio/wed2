@@ -14,6 +14,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Image from "next/image";
+import { ScrollReveal } from "../ui/ScrollReveal";
 
 export const Gift = () => {
   const { toast } = useToast();
@@ -56,69 +57,75 @@ export const Gift = () => {
 
       <div className="container mx-auto px-4 relative z-10 flex justify-center">
         {/* Main Gift Card */}
-        <div className="bg-white/90 backdrop-blur-md rounded-[32px] p-8 md:p-12 max-w-md w-full text-center shadow-2xl border border-white/20">
-          <div className="flex justify-center mb-6">
+        <ScrollReveal className="bg-white/90 backdrop-blur-md rounded-[32px] p-8 md:p-12 max-w-md w-full text-center shadow-2xl border border-white/20">
+          <ScrollReveal className="flex justify-center mb-6" delay={100}>
             <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
               <Heart className="text-white w-8 h-8" />
             </div>
-          </div>
+          </ScrollReveal>
 
-          <h2 className="font-headline text-4xl md:text-5xl text-primary mb-6">Wedding Gift</h2>
+          <ScrollReveal delay={200}>
+            <h2 className="font-headline text-4xl md:text-5xl text-primary mb-6">Wedding Gift</h2>
+          </ScrollReveal>
           
-          <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-10">
-            Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih, Anda dapat memberi melalui tombol di bawah ini.
-          </p>
+          <ScrollReveal delay={300}>
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-10">
+              Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih, Anda dapat memberi melalui tombol di bawah ini.
+            </p>
+          </ScrollReveal>
 
-          <Drawer>
-            <DrawerTrigger asChild>
-              <Button 
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full h-14 font-medium text-base shadow-sm"
-              >
-                <Wallet className="w-5 h-5 mr-3" /> Kirim Hadiah
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent className="bg-white border-none">
-              <div className="mx-auto w-full max-w-sm">
-                <DrawerHeader className="border-b border-muted/50 pb-6">
-                  <DrawerTitle className="font-headline text-2xl text-primary">Informasi Rekening</DrawerTitle>
-                  <DrawerDescription className="text-sm">
-                    Silakan salin nomor rekening di bawah ini untuk mengirimkan kado digital.
-                  </DrawerDescription>
-                </DrawerHeader>
-                
-                <div className="p-6 space-y-6">
-                  {accounts.map((acc, index) => (
-                    <div key={index} className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold uppercase tracking-widest text-primary-foreground bg-primary px-3 py-1 rounded-full">
-                          {acc.bank}
-                        </span>
-                        <Button 
-                          variant="ghost" 
-                          size="sm" 
-                          className="text-primary hover:bg-primary/10 h-8 px-3 rounded-full text-xs"
-                          onClick={() => copyToClipboard(acc.number)}
-                        >
-                          <Copy className="w-3 h-3 mr-2" /> Salin No. Rek
-                        </Button>
+          <ScrollReveal delay={400}>
+            <Drawer>
+              <DrawerTrigger asChild>
+                <Button 
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full h-14 font-medium text-base shadow-sm"
+                >
+                  <Wallet className="w-5 h-5 mr-3" /> Kirim Hadiah
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent className="bg-white border-none">
+                <div className="mx-auto w-full max-w-sm">
+                  <DrawerHeader className="border-b border-muted/50 pb-6">
+                    <DrawerTitle className="font-headline text-2xl text-primary">Informasi Rekening</DrawerTitle>
+                    <DrawerDescription className="text-sm">
+                      Silakan salin nomor rekening di bawah ini untuk mengirimkan kado digital.
+                    </DrawerDescription>
+                  </DrawerHeader>
+                  
+                  <div className="p-6 space-y-6">
+                    {accounts.map((acc, index) => (
+                      <div key={index} className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-bold uppercase tracking-widest text-primary-foreground bg-primary px-3 py-1 rounded-full">
+                            {acc.bank}
+                          </span>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="text-primary hover:bg-primary/10 h-8 px-3 rounded-full text-xs"
+                            onClick={() => copyToClipboard(acc.number)}
+                          >
+                            <Copy className="w-3 h-3 mr-2" /> Salin No. Rek
+                          </Button>
+                        </div>
+                        <div className="bg-muted/30 p-4 rounded-2xl border border-muted/50">
+                          <p className="font-mono text-xl tracking-wider text-primary mb-1">{acc.number}</p>
+                          <p className="text-xs text-muted-foreground uppercase tracking-widest">a.n {acc.name}</p>
+                        </div>
                       </div>
-                      <div className="bg-muted/30 p-4 rounded-2xl border border-muted/50">
-                        <p className="font-mono text-xl tracking-wider text-primary mb-1">{acc.number}</p>
-                        <p className="text-xs text-muted-foreground uppercase tracking-widest">a.n {acc.name}</p>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  <DrawerFooter className="pt-2 pb-8">
+                    <DrawerClose asChild>
+                      <Button variant="outline" className="rounded-full h-12 border-primary text-primary hover:bg-primary/5">Tutup</Button>
+                    </DrawerClose>
+                  </DrawerFooter>
                 </div>
-
-                <DrawerFooter className="pt-2 pb-8">
-                  <DrawerClose asChild>
-                    <Button variant="outline" className="rounded-full h-12 border-primary text-primary hover:bg-primary/5">Tutup</Button>
-                  </DrawerClose>
-                </DrawerFooter>
-              </div>
-            </DrawerContent>
-          </Drawer>
-        </div>
+              </DrawerContent>
+            </Drawer>
+          </ScrollReveal>
+        </ScrollReveal>
       </div>
     </section>
   );

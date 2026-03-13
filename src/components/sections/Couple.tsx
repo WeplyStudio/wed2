@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 import { BatakPattern } from "../ui/BatakPattern";
+import { ScrollReveal } from "../ui/ScrollReveal";
 
 export const Couple = () => {
   const groomImg = PlaceHolderImages.find((img) => img.id === "groom");
@@ -35,15 +36,15 @@ export const Couple = () => {
 
       <div className="container mx-auto px-4 relative z-10 text-center">
         {/* Header Section */}
-        <div className="mb-16 md:mb-24 max-w-xl mx-auto">
+        <ScrollReveal className="mb-16 md:mb-24 max-w-xl mx-auto">
           <p className="font-headline text-base text-muted-foreground mb-1 uppercase tracking-[0.3em]">Pasangan</p>
           <h2 className="font-headline text-4xl md:text-5xl text-primary mb-6">Pengantin</h2>
           <div className="w-12 h-px bg-primary/20 mx-auto mt-8" />
-        </div>
+        </ScrollReveal>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-32 md:gap-64 max-w-7xl mx-auto">
           {/* Groom */}
-          <div className="flex flex-col items-center">
+          <ScrollReveal className="flex flex-col items-center" delay={200}>
             <div className="relative w-72 h-[480px] md:w-80 md:h-[620px] mb-8 group transition-transform duration-500 hover:scale-105">
               <div className="absolute inset-0 rounded-[30px_150px_30px_30px] overflow-hidden shadow-2xl">
                 <Image
@@ -61,15 +62,15 @@ export const Couple = () => {
                 <p className="text-foreground text-sm font-medium">Bp. L. Sitorus & Ibu R. Marpaung</p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Divider */}
-          <div className="hidden md:flex flex-col items-center justify-center h-full pt-20">
+          <ScrollReveal className="hidden md:flex flex-col items-center justify-center h-full pt-20" delay={400}>
             <span className="font-headline text-6xl text-primary/10 italic">&</span>
-          </div>
+          </ScrollReveal>
 
           {/* Bride */}
-          <div className="flex flex-col items-center">
+          <ScrollReveal className="flex flex-col items-center" delay={600}>
             <div className="relative w-72 h-[480px] md:w-80 md:h-[620px] mb-8 group transition-transform duration-500 hover:scale-105">
               <div className="absolute inset-0 rounded-[150px_30px_30px_30px] overflow-hidden shadow-2xl">
                 <Image
@@ -87,7 +88,7 @@ export const Couple = () => {
                 <p className="text-foreground text-sm font-medium">Bp. F. Siburian (+) & Ibu S. Sianturi</p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
