@@ -56,16 +56,17 @@ export const EventDetails = () => {
 
       {/* Location Details Section */}
       <div className="py-24 relative z-10 overflow-hidden min-h-[800px] flex items-center">
-        {/* Background Image - Optimized to not over-zoom and show clearly */}
+        {/* Background Image - Updated to the new provided URL and optimized scaling/transparency */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://i.ibb.co.com/BVw06rX0/bg2.png"
+            src="https://i.ibb.co.com/6013P5SJ/Desain-tanpa-judul-20260313-163359-0000.png"
             alt="Section Background"
             fill
             className="object-cover object-center opacity-100"
             priority
           />
-          <div className="absolute inset-0 bg-white/20" />
+          {/* Minimal overlay to keep background clear but text readable */}
+          <div className="absolute inset-0 bg-white/5" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -152,22 +153,22 @@ export const EventDetails = () => {
                 </div>
                 
                 {/* Content */}
-                <div className="flex-1 p-6 md:p-10 space-y-8">
+                <div className="flex-1 p-6 md:p-10 space-y-8 text-right">
                   {/* Date Display */}
-                  <div className="flex items-center gap-6">
-                    <span className="font-headline text-5xl md:text-6xl text-[#bb4849]">21</span>
+                  <div className="flex items-center justify-end gap-6">
                     <div className="flex flex-col text-sm md:text-base uppercase tracking-widest font-bold text-foreground/70">
                       <span>Maret</span>
                       <span>2026</span>
                     </div>
+                    <span className="font-headline text-5xl md:text-6xl text-[#bb4849]">21</span>
                   </div>
                   
                   <div className="w-full h-px bg-muted/60" />
                   
                   <div className="space-y-6">
-                    <div className="flex items-center gap-3 text-sm md:text-base text-muted-foreground">
-                      <Clock className="w-5 h-5 text-[#bb4849]" />
+                    <div className="flex items-center justify-end gap-3 text-sm md:text-base text-muted-foreground">
                       <span>Setelah ibadah - Selesai</span>
+                      <Clock className="w-5 h-5 text-[#bb4849]" />
                     </div>
                     
                     <div className="space-y-2">
