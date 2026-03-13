@@ -12,7 +12,7 @@ import { useFirebase, initiateAnonymousSignIn } from "@/firebase";
 
 const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
   const searchParams = useSearchParams();
-  const guestName = searchParams.get("to") || "Nama Tamu";
+  const guestName = searchParams.get("name") || "Nama Tamu";
   const heroImg = PlaceHolderImages.find((img) => img.id === "hero-image");
   const { auth } = useFirebase();
 
