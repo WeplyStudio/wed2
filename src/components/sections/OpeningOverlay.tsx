@@ -21,38 +21,42 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
           src={heroImg?.imageUrl || ""}
           alt="Wedding Cover"
           fill
-          className="object-cover opacity-50 scale-105"
+          className="object-cover opacity-60 scale-105"
           priority
         />
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
       </div>
 
-      {/* Content Layer */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 h-full w-full max-w-lg mx-auto">
-        <div className="space-y-4 mb-12 animate-in fade-in slide-in-from-top-10 duration-1000">
-          <h2 className="font-headline text-2xl md:text-3xl text-primary font-medium italic">
+      {/* Content Layer - Pushed to bottom with tighter spacing */}
+      <div className="relative z-10 flex flex-col items-center justify-end text-center px-6 h-full w-full max-w-lg mx-auto pb-20 md:pb-28">
+        
+        {/* Wedding Invitation Label */}
+        <div className="space-y-1 mb-6 animate-in fade-in slide-in-from-top-10 duration-1000">
+          <h2 className="font-headline text-2xl md:text-3xl text-primary font-medium italic leading-none">
             Wedding Invitation
           </h2>
-          <p className="text-white text-sm md:text-base tracking-[0.2em] font-medium uppercase">
-            21 JULI 2026
+          <p className="text-white text-[10px] md:text-xs tracking-[0.3em] font-medium uppercase opacity-80">
+            21 MARET 2026
           </p>
         </div>
 
-        <div className="mb-16 animate-in fade-in zoom-in duration-1000 delay-300">
-          <h1 className="font-headline text-5xl md:text-7xl text-primary leading-tight">
+        {/* Main Names */}
+        <div className="mb-10 animate-in fade-in zoom-in duration-1000 delay-300">
+          <h1 className="font-headline text-5xl md:text-7xl text-primary leading-[1.1] drop-shadow-lg">
             Binsar &<br />Indrawati
           </h1>
         </div>
 
-        <div className="space-y-6 mb-12 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
-          <div className="space-y-2">
-            <p className="text-white/90 font-serif italic text-base md:text-lg">
+        {/* Special Invite Section */}
+        <div className="space-y-6 mb-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
+          <div className="space-y-1">
+            <p className="text-white/80 font-serif italic text-sm md:text-base leading-tight">
               Special Invite To :
             </p>
-            <h3 className="text-primary font-headline text-2xl md:text-3xl">
+            <h3 className="text-primary font-headline text-2xl md:text-3xl leading-tight">
               {guestName}
             </h3>
-            <p className="text-white font-serif italic text-base">
+            <p className="text-white/60 font-serif italic text-[10px] md:text-xs uppercase tracking-widest">
               Di Tempat
             </p>
           </div>
@@ -60,10 +64,10 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
           <Button 
             onClick={onOpen}
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 h-auto group transition-all duration-500 shadow-xl"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-10 py-6 h-auto group transition-all duration-500 shadow-2xl border border-primary/20"
           >
-            <Mail className="w-5 h-5 mr-2" />
-            <span className="font-medium text-base">Buka Undangan</span>
+            <Mail className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+            <span className="font-medium text-base tracking-wide">Buka Undangan</span>
           </Button>
         </div>
       </div>
