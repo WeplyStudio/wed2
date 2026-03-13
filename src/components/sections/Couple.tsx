@@ -49,7 +49,7 @@ export const Couple = () => {
           {/* Groom */}
           <div className="flex flex-col items-center">
             <div className="relative w-72 h-[480px] md:w-80 md:h-[620px] mb-8 group transition-transform duration-500 hover:scale-105">
-              <div className="absolute inset-0 rounded-[30px_120px_30px_30px] overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 rounded-[30px_150px_30px_30px] overflow-hidden shadow-2xl">
                 <Image
                   src={groomImg?.imageUrl || ""}
                   alt="Binsar Sitorus"
@@ -75,7 +75,7 @@ export const Couple = () => {
           {/* Bride */}
           <div className="flex flex-col items-center">
             <div className="relative w-72 h-[480px] md:w-80 md:h-[620px] mb-8 group transition-transform duration-500 hover:scale-105">
-              <div className="absolute inset-0 rounded-[120px_30px_30px_30px] overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 rounded-[150px_30px_30px_30px] overflow-hidden shadow-2xl">
                 <Image
                   src={brideImg?.imageUrl || ""}
                   alt="Indrawati Siburian"
