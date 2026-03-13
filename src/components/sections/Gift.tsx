@@ -1,4 +1,3 @@
-
 "use client";
 
 import { CreditCard, Copy, Heart, Wallet } from "lucide-react";
@@ -41,17 +40,18 @@ export const Gift = () => {
   };
 
   return (
-    <section id="gift" className="relative py-24 flex items-center justify-center overflow-hidden min-h-[600px]">
-      {/* Background Image - Blurred */}
+    <section id="gift" className="relative py-24 flex items-center justify-center overflow-hidden min-h-[600px] bg-white">
+      {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://picsum.photos/seed/giftbg/1200/800"
+          src="https://i.ibb.co.com/s933d4fP/Desain-tanpa-judul-20260313-163535-0000.png"
           alt="Gift Background"
           fill
-          className="object-cover opacity-50 blur-sm"
-          data-ai-hint="wedding couple"
+          className="object-cover object-center opacity-40"
+          priority
         />
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Transparent overlay */}
+        <div className="absolute inset-0 bg-white/10" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10 flex justify-center">
