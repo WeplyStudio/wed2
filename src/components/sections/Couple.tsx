@@ -10,7 +10,7 @@ export const Couple = () => {
   const coupleBgUrl = "https://i.ibb.co.com/WN5cmfHX/bg1.png";
 
   return (
-    <section id="couple" className="py-16 md:py-24 bg-[#fffafa] relative overflow-hidden min-h-[850px] flex items-center">
+    <section id="couple" className="py-16 md:py-24 bg-[#fffafa] relative overflow-hidden min-h-[950px] flex items-center">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -45,13 +45,12 @@ export const Couple = () => {
           <div className="w-12 h-px bg-primary/20 mx-auto mt-6" />
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 max-w-6xl mx-auto">
           {/* Groom */}
           <div className="flex flex-col items-center">
-            <div className="relative w-64 h-80 md:w-72 md:h-[480px] mb-6 group transition-transform duration-500 hover:scale-105">
-              {/* Custom asymmetrical rounded frame */}
-              <div className="absolute inset-0 rounded-[50px_200px_50px_50px] border-[8px] border-primary z-10 shadow-xl pointer-events-none" />
-              <div className="absolute inset-[8px] rounded-[42px_192px_42px_42px] overflow-hidden">
+            <div className="relative w-72 h-[450px] md:w-80 md:h-[600px] mb-6 group transition-transform duration-500 hover:scale-105">
+              {/* Custom asymmetrical rounded frame - No border, larger shadow */}
+              <div className="absolute inset-0 rounded-[50px_220px_50px_50px] overflow-hidden shadow-2xl">
                 <Image
                   src={groomImg?.imageUrl || ""}
                   alt="Binsar Sitorus"
@@ -72,10 +71,9 @@ export const Couple = () => {
 
           {/* Bride */}
           <div className="flex flex-col items-center">
-            <div className="relative w-64 h-80 md:w-72 md:h-[480px] mb-6 group transition-transform duration-500 hover:scale-105">
-              {/* Custom asymmetrical rounded frame (mirrored curve for the bride) */}
-              <div className="absolute inset-0 rounded-[200px_50px_50px_50px] border-[8px] border-primary z-10 shadow-xl pointer-events-none" />
-              <div className="absolute inset-[8px] rounded-[192px_42px_42px_42px] overflow-hidden">
+            <div className="relative w-72 h-[450px] md:w-80 md:h-[600px] mb-6 group transition-transform duration-500 hover:scale-105">
+              {/* Custom asymmetrical rounded frame - No border, larger shadow */}
+              <div className="absolute inset-0 rounded-[220px_50px_50px_50px] overflow-hidden shadow-2xl">
                 <Image
                   src={brideImg?.imageUrl || ""}
                   alt="Indrawati Siburian"
