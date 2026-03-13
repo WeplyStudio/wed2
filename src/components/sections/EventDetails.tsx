@@ -71,8 +71,8 @@ export const EventDetails = () => {
               
               <div className="flex flex-1">
                 {/* Vertical Sidebar */}
-                <div className="bg-[#cbd5c0] w-16 md:w-20 flex items-center justify-center py-8">
-                  <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-foreground/60 tracking-[0.3em] uppercase">
+                <div className="bg-[#bb4849] w-16 md:w-20 flex items-center justify-center py-8">
+                  <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase">
                     Pamasu-masuon
                   </span>
                 </div>
@@ -81,7 +81,7 @@ export const EventDetails = () => {
                 <div className="flex-1 p-6 md:p-10 space-y-8">
                   {/* Date Display */}
                   <div className="flex items-center gap-6">
-                    <span className="font-headline text-5xl md:text-6xl text-[#cbd5c0]">21</span>
+                    <span className="font-headline text-5xl md:text-6xl text-[#bb4849]">21</span>
                     <div className="flex flex-col text-sm md:text-base uppercase tracking-widest font-bold text-foreground/70">
                       <span>Maret</span>
                       <span>2026</span>
@@ -92,12 +92,12 @@ export const EventDetails = () => {
                   
                   <div className="space-y-6">
                     <div className="flex items-center gap-3 text-sm md:text-base text-muted-foreground">
-                      <Clock className="w-5 h-5 text-[#cbd5c0]" />
+                      <Clock className="w-5 h-5 text-[#bb4849]" />
                       <span>10:00 AM - Selesai</span>
                     </div>
                     
                     <div className="space-y-2">
-                      <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#cbd5c0] font-bold">LOKASI ACARA</p>
+                      <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#bb4849] font-bold">LOKASI ACARA</p>
                       <p className="text-sm md:text-base font-medium leading-relaxed text-foreground/80">
                         Gpdi siraituruk kecamatan porsea kabupaten toba
                       </p>
@@ -106,7 +106,7 @@ export const EventDetails = () => {
                   
                   <Button 
                     variant="outline" 
-                    className="w-full rounded-none border-[#cbd5c0] text-foreground/70 hover:bg-[#cbd5c0]/10 h-12 uppercase text-xs tracking-widest transition-all"
+                    className="w-full rounded-none border-[#bb4849] text-[#bb4849] hover:bg-[#bb4849]/10 h-12 uppercase text-xs tracking-widest transition-all"
                     onClick={() => window.open('https://maps.google.com/?q=Gpdi+siraituruk+porsea', '_blank')}
                   >
                     <MapPin className="w-4 h-4 mr-2" /> Google Maps
@@ -130,8 +130,8 @@ export const EventDetails = () => {
               
               <div className="flex flex-1">
                 {/* Vertical Sidebar */}
-                <div className="bg-[#cbd5c0] w-16 md:w-20 flex items-center justify-center py-8">
-                  <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-foreground/60 tracking-[0.3em] uppercase">
+                <div className="bg-[#bb4849] w-16 md:w-20 flex items-center justify-center py-8">
+                  <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase">
                     Ulaon Unjuk
                   </span>
                 </div>
@@ -140,7 +140,7 @@ export const EventDetails = () => {
                 <div className="flex-1 p-6 md:p-10 space-y-8">
                   {/* Date Display */}
                   <div className="flex items-center gap-6">
-                    <span className="font-headline text-5xl md:text-6xl text-[#cbd5c0]">21</span>
+                    <span className="font-headline text-5xl md:text-6xl text-[#bb4849]">21</span>
                     <div className="flex flex-col text-sm md:text-base uppercase tracking-widest font-bold text-foreground/70">
                       <span>Maret</span>
                       <span>2026</span>
@@ -151,12 +151,12 @@ export const EventDetails = () => {
                   
                   <div className="space-y-6">
                     <div className="flex items-center gap-3 text-sm md:text-base text-muted-foreground">
-                      <Clock className="w-5 h-5 text-[#cbd5c0]" />
+                      <Clock className="w-5 h-5 text-[#bb4849]" />
                       <span>Setelah ibadah - Selesai</span>
                     </div>
                     
                     <div className="space-y-2">
-                      <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#cbd5c0] font-bold">LOKASI ACARA</p>
+                      <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#bb4849] font-bold">LOKASI ACARA</p>
                       <p className="text-sm md:text-base font-medium leading-relaxed text-foreground/80">
                         Amborgang kecamatan porsea
                       </p>
@@ -165,7 +165,7 @@ export const EventDetails = () => {
                   
                   <Button 
                     variant="outline" 
-                    className="w-full rounded-none border-[#cbd5c0] text-foreground/70 hover:bg-[#cbd5c0]/10 h-12 uppercase text-xs tracking-widest transition-all"
+                    className="w-full rounded-none border-[#bb4849] text-[#bb4849] hover:bg-[#bb4849]/10 h-12 uppercase text-xs tracking-widest transition-all"
                     onClick={() => window.open('https://maps.google.com/?q=Amborgang+porsea', '_blank')}
                   >
                     <ExternalLink className="w-4 h-4 mr-2" /> Google Maps
