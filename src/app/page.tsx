@@ -25,57 +25,58 @@ export default function Home() {
       <Gift />
       <Guestbook />
       
-      {/* Footer yang 1000x Lebih Mirip dengan Screenshot */}
-      <footer className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-        {/* Background Solid Maroon Layer (The base color) */}
+      {/* Footer yang Mengikuti Screenshot Secara Presisi */}
+      <footer className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        {/* Background Solid Maroon Layer (Warna Dasar) */}
         <div className="absolute inset-0 bg-primary z-0" />
 
-        {/* Background Image Layer with Gradient to Solid Maroon */}
-        <div className="absolute inset-0 z-1 h-[70%]">
+        {/* Background Image Layer dengan Gradasi Tebal ke Maroon */}
+        <div className="absolute inset-0 z-1 h-3/4">
           <Image
             src={footerImg?.imageUrl || ""}
             alt="Footer Background"
             fill
-            className="object-cover grayscale-[10%]"
+            className="object-cover opacity-90"
             priority
           />
-          {/* Efek Gradasi: Dari Foto Melebur ke Maroon */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-primary/40 to-primary" />
+          {/* Efek Gradasi: Dari Foto Melebur ke Warna Primary (Maroon) */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-primary/50 to-primary" />
         </div>
 
-        {/* Content Container - Exactly following the Screenshot layout */}
-        <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center justify-center h-full pt-20">
+        {/* Konten Footer */}
+        <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center h-full pt-32 pb-24">
           
-          {/* Header Section */}
-          <div className="space-y-6 mb-20 animate-reveal">
+          {/* Bagian Atas: Ucapan Terima Kasih */}
+          <div className="space-y-6 mb-40 animate-reveal">
             <h2 className="font-headline text-4xl md:text-5xl text-white italic">
               Terima Kasih
             </h2>
-            <div className="space-y-2">
+            <div className="space-y-3 max-w-lg mx-auto">
               <p className="text-white/90 text-sm md:text-base leading-relaxed font-body italic">
                 Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kami.
               </p>
-              <p className="text-white/80 text-xs md:text-sm font-body italic">
+              <p className="text-white/70 text-[10px] md:text-xs font-body italic uppercase tracking-widest">
                 Wassalamu'alaikum warahmatullahi wabarakatuh
               </p>
             </div>
           </div>
 
-          {/* Names Section - Adjusted sizes as requested */}
-          <div className="space-y-4">
-            <p className="text-white/70 text-[10px] uppercase tracking-[0.4em] font-medium">
-              KAMI YANG BERBAHAGIA
-            </p>
-            <h3 className="font-headline text-4xl md:text-6xl text-white font-medium">
+          {/* Bagian Bawah: Nama & Branding (Sesuai Screenshot) */}
+          <div className="flex flex-col items-center">
+            {/* Label Branding */}
+            <div className="mb-6 space-y-1">
+              <p className="text-white/80 text-[10px] md:text-xs uppercase tracking-[0.5em] font-bold">
+                KAMI YANG BERBAHAGIA
+              </p>
+              <p className="text-white/50 text-[8px] md:text-[10px] uppercase tracking-[0.6em] font-medium">
+                ADAT & CINTA • 2026
+              </p>
+            </div>
+
+            {/* Nama Utama */}
+            <h3 className="font-headline text-5xl md:text-8xl text-white font-medium drop-shadow-2xl animate-reveal" style={{ animationDelay: '0.4s' }}>
               Binsar & Indrawati
             </h3>
-          </div>
-
-          {/* Bottom Branding */}
-          <div className="absolute bottom-12 w-full">
-            <p className="text-white/40 text-[9px] uppercase tracking-[0.5em] font-medium">
-              ADAT & CINTA • 2026
-            </p>
           </div>
         </div>
       </footer>
