@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -25,8 +24,8 @@ export const Couple = () => {
                 data-ai-hint="groom portrait"
               />
             </div>
-            <h3 className="font-headline text-3xl text-accent mb-2">Raja Nainggolan, S.T.</h3>
-            <p className="text-muted-foreground italic mb-4">First son of Mr. Togar Nainggolan & Mrs. Berliana Panjaitan</p>
+            <h3 className="font-headline text-3xl text-accent mb-2">Binsar Sitorus</h3>
+            <p className="text-muted-foreground italic mb-4">Son of Mr. L. Sitorus & Mrs. R. Marpaung</p>
             <div className="w-12 h-px bg-accent/30 mx-auto" />
           </div>
 
@@ -48,8 +47,8 @@ export const Couple = () => {
                 data-ai-hint="bride portrait"
               />
             </div>
-            <h3 className="font-headline text-3xl text-accent mb-2">Putri Siahaan, S.H.</h3>
-            <p className="text-muted-foreground italic mb-4">Second daughter of Mr. Maruli Siahaan & Mrs. Roma Silalahi</p>
+            <h3 className="font-headline text-3xl text-accent mb-2">Indrawati Siburian</h3>
+            <p className="text-muted-foreground italic mb-4">Daughter of Mr. F. Siburian (+) & Mrs. S. Sianturi</p>
             <div className="w-12 h-px bg-accent/30 mx-auto" />
           </div>
         </div>

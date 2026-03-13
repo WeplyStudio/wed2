@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -35,19 +34,19 @@ export const Hero = () => {
         
         {/* Couple Names */}
         <div className="text-center mb-8">
-          <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl text-white mb-2 animate-reveal" style={{ animationDelay: '0.4s' }}>
-            Raja & Putri
+          <h1 className="font-headline text-5xl md:text-8xl lg:text-9xl text-white mb-2 animate-reveal" style={{ animationDelay: '0.4s' }}>
+            Binsar & Indrawati
           </h1>
           <div className="overflow-hidden">
             <p className="font-headline text-xl md:text-2xl text-white/90 tracking-[0.1em] animate-reveal" style={{ animationDelay: '0.6s' }}>
-              25 . 10 . 2025
+              21 . 03 . 2026
             </p>
           </div>
         </div>
 
         {/* Countdown Section */}
         <div className="w-full max-w-3xl mt-4">
-          <Countdown targetDate="2025-10-25T10:00:00" />
+          <Countdown targetDate="2026-03-21T10:00:00" />
         </div>
 
         {/* Decorative Quote */}

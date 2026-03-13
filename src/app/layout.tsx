@@ -1,10 +1,9 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Adat & Cinta - Wedding of Raja & Putri',
-  description: 'Digital wedding invitation for the wedding of Raja and Putri. A traditional Batak celebration.',
+  title: 'Adat & Cinta - Wedding of Binsar & Indrawati',
+  description: 'Digital wedding invitation for the wedding of Binsar Sitorus and Indrawati Siburian. A traditional Batak celebration in Porsea.',
 };
 
 export default function RootLayout({

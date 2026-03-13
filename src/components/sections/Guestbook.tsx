@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -20,7 +19,7 @@ export const Guestbook = () => {
   const [messages, setMessages] = useState<GuestMessage[]>([
     {
       name: "Bona Simanjuntak",
-      message: "Selamat menempuh hidup baru Raja & Putri! Horas! Semoga diberkati terus rumahtangga kalian.",
+      message: "Selamat menempuh hidup baru Binsar & Indrawati! Horas! Semoga diberkati terus rumahtangga kalian.",
       timestamp: "2 hours ago",
     },
     {
@@ -72,7 +71,7 @@ export const Guestbook = () => {
     setIsGenerating(true);
     try {
       const result = await guestBlessingGenerator({
-        coupleNames: "Raja and Putri",
+        coupleNames: "Binsar and Indrawati",
         guestName: name,
         relationship: "Family/Friend",
         sentimentKeywords: "Traditional Batak, Long Life, Prosperity",

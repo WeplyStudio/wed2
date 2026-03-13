@@ -49,16 +49,16 @@ export const OpeningOverlay = () => {
       <div className="relative z-10 text-center px-6 max-w-lg mb-24 md:mb-32">
         <div className="mb-8 animate-in fade-in slide-in-from-top-12 duration-1000">
           <p className="text-secondary uppercase tracking-[0.6em] text-[10px] font-bold mb-6">You are invited to</p>
-          <h1 className="font-headline text-6xl md:text-8xl text-white mb-4 gold-shimmer">
-            Raja & Putri
+          <h1 className="font-headline text-5xl md:text-7xl text-white mb-4 gold-shimmer">
+            Binsar & Indrawati
           </h1>
           <div className="w-16 h-px bg-secondary/50 mx-auto my-6" />
-          <p className="text-white/80 tracking-[0.3em] uppercase text-xs">25 . 10 . 2025</p>
+          <p className="text-white/80 tracking-[0.3em] uppercase text-xs">21 . 03 . 2026</p>
         </div>
 
         <div className="space-y-8 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
           <p className="text-white/70 italic text-sm font-light max-w-xs mx-auto leading-relaxed">
-            "To love and to cherish, until death do us part."
+            "TUHAN memberkati engkau dan melindungi engkau."
           </p>
           <Button 
             onClick={handleOpen}

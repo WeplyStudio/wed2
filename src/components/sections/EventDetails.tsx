@@ -1,18 +1,17 @@
-
 "use client";
 
-import { MapPin, Calendar, Clock, Info, ExternalLink } from "lucide-react";
+import { MapPin, Calendar, Clock, Info, ExternalLink, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export const EventDetails = () => {
   const handleAddToCalendar = () => {
     const event = {
-      title: "Wedding of Raja & Putri",
-      start: "20251025T100000Z",
-      end: "20251025T210000Z",
-      location: "Balai Kartini, Jakarta, Indonesia",
-      details: "Traditional Batak Wedding celebration for Raja and Putri."
+      title: "Wedding of Binsar & Indrawati",
+      start: "20260321T100000Z",
+      end: "20260321T210000Z",
+      location: "Porsea, Toba, Indonesia",
+      details: "Traditional Batak Wedding celebration for Binsar and Indrawati."
     };
     const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start}/${event.end}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`;
     window.open(googleCalendarUrl, '_blank');
@@ -21,11 +20,14 @@ export const EventDetails = () => {
   return (
     <section id="details" className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-headline text-4xl md:text-5xl gold-text-gradient mb-4">Event Details</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            We invite you to share our joy as we celebrate our love in a traditional Batak ceremony.
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <Quote className="w-10 h-10 text-accent/20 mx-auto mb-6" />
+          <h3 className="font-headline text-2xl text-accent mb-4 italic">Bilangan 6:24-26</h3>
+          <p className="text-muted-foreground leading-relaxed italic mb-8">
+            "TUHAN memberkati engkau dan melindungi engkau; TUHAN menyinari engkau dengan wajah-Nya dan memberi engkau kasih karunia; TUHAN menghadapkan wajah-Nya kepadamu dan memberi engkau damai sejahtera"
           </p>
+          <div className="w-24 h-px bg-accent/30 mx-auto mb-12" />
+          <h2 className="font-headline text-4xl md:text-5xl gold-text-gradient mb-4">Save The Date</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -46,11 +48,11 @@ export const EventDetails = () => {
               <ul className="space-y-4 text-foreground/80">
                 <li className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <span>10:00 AM - 12:00 PM</span>
+                  <span>10:00 AM - selesai</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <span>HKBP Sudirman Church, Jakarta Selatan</span>
+                  <span>Gpdi siraituruk kecamatan porsea kabupaten toba</span>
                 </li>
               </ul>
 
@@ -58,7 +60,7 @@ export const EventDetails = () => {
                 <Button 
                   variant="outline" 
                   className="w-full border-accent/30 text-accent hover:bg-accent/10"
-                  onClick={() => window.open('https://maps.google.com', '_blank')}
+                  onClick={() => window.open('https://maps.google.com/?q=Gpdi+siraituruk+porsea', '_blank')}
                 >
                   <MapPin className="w-4 h-4 mr-2" /> View Location
                 </Button>
@@ -83,11 +85,11 @@ export const EventDetails = () => {
               <ul className="space-y-4 text-foreground/80">
                 <li className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <span>01:00 PM - End</span>
+                  <span>Setelah ibadah - selesai</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <span>Balai Kartini - Rafflesia Ballroom, Jakarta Selatan</span>
+                  <span>Amborgang kecamatan porsea</span>
                 </li>
               </ul>
 
@@ -95,7 +97,7 @@ export const EventDetails = () => {
                 <Button 
                   variant="outline" 
                   className="flex-1 border-accent/30 text-accent hover:bg-accent/10"
-                  onClick={() => window.open('https://maps.google.com', '_blank')}
+                  onClick={() => window.open('https://maps.google.com/?q=Amborgang+porsea', '_blank')}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" /> Open Maps
                 </Button>

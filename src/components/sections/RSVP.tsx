@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -75,7 +74,7 @@ export const RSVP = () => {
       <div className="container mx-auto px-4 max-w-xl">
         <div className="text-center mb-12">
           <h2 className="font-headline text-4xl md:text-5xl gold-text-gradient mb-4">RSVP</h2>
-          <p className="text-muted-foreground">Kindly confirm your presence by October 10th, 2025.</p>
+          <p className="text-muted-foreground">Kindly confirm your presence by March 10th, 2026.</p>
         </div>
 
         <Form {...form}>

@@ -13,7 +13,7 @@ import {z} from 'genkit';
 const GuestBlessingGeneratorInputSchema = z.object({
   coupleNames: z
     .string()
-    .describe("The names of the couple getting married (e.g., 'Raja and Putri')."),
+    .describe("The names of the couple getting married (e.g., 'Binsar and Indrawati')."),
   guestName: z.string().describe("The name of the guest composing the blessing."),
   relationship: z
     .string()
