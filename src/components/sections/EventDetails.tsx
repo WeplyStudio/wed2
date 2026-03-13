@@ -56,16 +56,16 @@ export const EventDetails = () => {
 
       {/* Location Details Section */}
       <div className="py-24 relative z-10 overflow-hidden">
-        {/* Background Image - Optimized to prevent over-zoom */}
+        {/* Background Image - Adjusted to show more clearly and avoid over-zoom */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://i.ibb.co.com/BVw06rX0/bg2.png"
             alt="Section Background"
             fill
-            className="object-cover object-center opacity-30"
+            className="object-cover object-center opacity-40"
             priority
           />
-          <div className="absolute inset-0 bg-white/70" />
+          <div className="absolute inset-0 bg-white/60" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
