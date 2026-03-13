@@ -56,16 +56,16 @@ export const EventDetails = () => {
 
       {/* Location Details Section */}
       <div className="py-24 relative z-10 overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image - Optimized to prevent over-zoom */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://i.ibb.co.com/BVw06rX0/bg2.png"
             alt="Section Background"
             fill
-            className="object-cover opacity-30"
+            className="object-cover object-center opacity-30"
             priority
           />
-          <div className="absolute inset-0 bg-white/60" />
+          <div className="absolute inset-0 bg-white/70" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -85,9 +85,9 @@ export const EventDetails = () => {
               </div>
               
               <div className="flex flex-1">
-                {/* Vertical Sidebar - Di Sebelah Kiri */}
+                {/* Vertical Sidebar - Maroon */}
                 <div className="bg-[#bb4849] w-16 md:w-20 flex items-center justify-center py-8">
-                  <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase">
+                  <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase whitespace-nowrap">
                     Pamasu-masuon
                   </span>
                 </div>
@@ -144,9 +144,9 @@ export const EventDetails = () => {
               </div>
               
               <div className="flex flex-1 flex-row-reverse">
-                {/* Vertical Sidebar - Di Sebelah Kanan (Reverse) */}
+                {/* Vertical Sidebar - Maroon (Right side) */}
                 <div className="bg-[#bb4849] w-16 md:w-20 flex items-center justify-center py-8">
-                  <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase">
+                  <span className="[writing-mode:vertical-rl] rotate-180 font-headline text-lg md:text-xl text-white tracking-[0.3em] uppercase whitespace-nowrap">
                     Ulaon Unjuk
                   </span>
                 </div>
