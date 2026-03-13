@@ -7,7 +7,7 @@ import { BatakPattern } from "../ui/BatakPattern";
 export const Couple = () => {
   const groomImg = PlaceHolderImages.find((img) => img.id === "groom");
   const brideImg = PlaceHolderImages.find((img) => img.id === "bride");
-  const coupleBgUrl = "https://i.ibb.co.com/s933d4fP/Desain-tanpa-judul-20260313-163535-0000.png";
+  const coupleBgUrl = "https://i.ibb.co.com/6013P5SJ/Desain-tanpa-judul-20260313-163359-0000.png";
 
   return (
     <section id="couple" className="py-20 md:py-32 bg-[#fffafa] relative overflow-hidden min-h-[1000px] flex items-center">
@@ -21,8 +21,7 @@ export const Couple = () => {
           priority
         />
         {/* Subtle overlay to maintain text readability while keeping the BG clear */}
-        <div className="absolute inset-0 bg-white/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#fffafa] via-transparent to-[#fffafa] opacity-40" />
+        <div className="absolute inset-0 bg-white/5" />
       </div>
 
       {/* Background Pattern Layer */}

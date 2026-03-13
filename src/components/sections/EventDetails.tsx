@@ -55,10 +55,10 @@ export const EventDetails = () => {
 
       {/* Location Details Section */}
       <div className="py-24 relative z-10 overflow-hidden min-h-[800px] flex items-center">
-        {/* Background Image - Updated to the new provided URL and optimized scaling/transparency */}
+        {/* Background Image - Updated to the correct URL and optimized scaling/transparency */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://i.ibb.co.com/6013P5SJ/Desain-tanpa-judul-20260313-163359-0000.png"
+            src="https://i.ibb.co.com/s933d4fP/Desain-tanpa-judul-20260313-163535-0000.png"
             alt="Section Background"
             fill
             className="object-cover object-center opacity-100"
