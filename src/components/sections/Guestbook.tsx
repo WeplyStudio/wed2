@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -5,34 +6,37 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles, Send, User, MessageSquareText, Wand2, Loader2, Quote } from "lucide-react";
+import { Sparkles, Send, User, MessageSquareText, Loader2, Quote } from "lucide-react";
 import { guestBlessingGenerator } from "@/ai/flows/guest-blessing-generator";
 import { useToast } from "@/hooks/use-toast";
 import { BatakPattern } from "../ui/BatakPattern";
-
-type GuestMessage = {
-  name: string;
-  message: string;
-  timestamp: string;
-};
+import { 
+  useFirebase, 
+  useCollection, 
+  useMemoFirebase, 
+  setDocumentNonBlocking 
+} from "@/firebase";
+import { collection, query, orderBy, doc, serverTimestamp } from "firebase/firestore";
+import { formatDistanceToNow } from "date-fns";
+import { id as localeId } from "date-fns/locale";
 
 export const Guestbook = () => {
-  const [messages, setMessages] = useState<GuestMessage[]>([
-    {
-      name: "Bona Simanjuntak",
-      message: "Selamat menempuh hidup baru Binsar & Indrawati! Horas! Semoga diberkati terus rumahtangga kalian sampai kakek nenek.",
-      timestamp: "2 jam yang lalu",
-    },
-    {
-      name: "Tini Hutauruk",
-      message: "Pasangan yang sangat serasi. Semoga cinta kalian terus tumbuh setiap harinya. Selamat berbahagia!",
-      timestamp: "5 jam yang lalu",
-    }
-  ]);
+  const { firestore, user } = useFirebase();
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const { toast } = useToast();
+
+  // Fetch guestbook entries from Firestore
+  const guestbookQuery = useMemoFirebase(() => {
+    if (!firestore) return null;
+    return query(
+      collection(firestore, "guestbook_entries"),
+      orderBy("submittedAt", "desc")
+    );
+  }, [firestore]);
+
+  const { data: messages, isLoading } = useCollection(guestbookQuery);
 
   const handlePostMessage = () => {
     if (!name || !message) {
@@ -44,13 +48,32 @@ export const Guestbook = () => {
       return;
     }
 
-    const newMessage = {
-      name,
-      message,
-      timestamp: "Baru saja",
+    if (!user) {
+      toast({
+        variant: "destructive",
+        title: "Akses Ditolak",
+        description: "Anda harus membuka undangan untuk mengirim pesan.",
+      });
+      return;
+    }
+
+    if (!firestore) return;
+
+    // Create a new document reference to get the ID beforehand
+    const entriesRef = collection(firestore, "guestbook_entries");
+    const newEntryRef = doc(entriesRef);
+    const entryId = newEntryRef.id;
+
+    const entryData = {
+      id: entryId,
+      guestName: name,
+      message: message,
+      submittedAt: serverTimestamp(),
     };
 
-    setMessages([newMessage, ...messages]);
+    // Use non-blocking update to satisfy Firestore Security Rules and performance
+    setDocumentNonBlocking(newEntryRef, entryData, { merge: true });
+
     setName("");
     setMessage("");
     toast({
@@ -91,6 +114,17 @@ export const Guestbook = () => {
       });
     } finally {
       setIsGenerating(false);
+    }
+  };
+
+  const formatTimestamp = (timestamp: any) => {
+    if (!timestamp) return "Baru saja";
+    try {
+      // Handle Firestore Timestamp or Date string
+      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+      return formatDistanceToNow(date, { addSuffix: true, locale: localeId });
+    } catch (e) {
+      return "Beberapa saat lalu";
     }
   };
 
@@ -167,16 +201,21 @@ export const Guestbook = () => {
             </Card>
           </div>
 
-          {/* Message List */}
-          <div className="lg:col-span-3 space-y-6 max-h-[700px] overflow-y-auto pr-2 custom-scrollbar">
-            {messages.length === 0 ? (
+          {/* Message List - Scrollable with custom styling */}
+          <div className="lg:col-span-3 space-y-6 max-h-[700px] overflow-y-auto pr-2 custom-scrollbar scroll-smooth">
+            {isLoading ? (
+              <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
+                <Loader2 className="w-8 h-8 animate-spin mb-4 text-primary" />
+                <p className="italic">Memuat ucapan...</p>
+              </div>
+            ) : !messages || messages.length === 0 ? (
               <div className="text-center py-20 bg-muted/10 rounded-3xl border border-dashed border-primary/20">
                 <MessageSquareText className="w-12 h-12 text-primary/20 mx-auto mb-4" />
                 <p className="text-muted-foreground italic">Belum ada ucapan. Jadilah yang pertama!</p>
               </div>
             ) : (
               messages.map((msg, index) => (
-                <Card key={index} className="bg-white border-none shadow-sm rounded-2xl group transition-all hover:shadow-md hover:-translate-y-1">
+                <Card key={msg.id} className="bg-white border-none shadow-sm rounded-2xl group transition-all hover:shadow-md hover:-translate-y-1">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
@@ -184,8 +223,10 @@ export const Guestbook = () => {
                       </div>
                       <div className="flex-1 space-y-2">
                         <div className="flex justify-between items-center">
-                          <h4 className="font-headline text-lg text-primary">{msg.name}</h4>
-                          <span className="text-[10px] uppercase text-muted-foreground/60 tracking-wider font-bold">{msg.timestamp}</span>
+                          <h4 className="font-headline text-lg text-primary">{msg.guestName}</h4>
+                          <span className="text-[10px] uppercase text-muted-foreground/60 tracking-wider font-bold">
+                            {formatTimestamp(msg.submittedAt)}
+                          </span>
                         </div>
                         <div className="relative">
                           <Quote className="absolute -top-1 -left-1 w-8 h-8 text-primary/5 -z-0" />

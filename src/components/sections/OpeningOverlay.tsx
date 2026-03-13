@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
@@ -7,11 +8,21 @@ import { Mail } from "lucide-react";
 import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 import { cn } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
+import { useFirebase, initiateAnonymousSignIn } from "@/firebase";
 
 const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
   const searchParams = useSearchParams();
   const guestName = searchParams.get("to") || "Nama Tamu";
   const heroImg = PlaceHolderImages.find((img) => img.id === "hero-image");
+  const { auth } = useFirebase();
+
+  const handleOpenClick = () => {
+    // Initiate anonymous sign-in when the invitation is opened
+    if (auth) {
+      initiateAnonymousSignIn(auth);
+    }
+    onOpen();
+  };
 
   return (
     <>
@@ -62,7 +73,7 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
           </div>
 
           <Button 
-            onClick={onOpen}
+            onClick={handleOpenClick}
             className="bg-primary text-white hover:bg-primary/90 rounded-full px-6 py-2 h-auto group transition-all duration-500 shadow-lg border border-primary/20 scale-90 md:scale-100"
           >
             <Mail className="w-3.5 h-3.5 mr-2 group-hover:animate-bounce" />
