@@ -13,7 +13,7 @@ export const EventDetails = () => {
       {/* Verse & Countdown Hero Section */}
       <div className="relative min-h-screen w-full flex items-center justify-center py-24 overflow-hidden">
         <Image
-          src="https://i.ibb.co.com/YKSVKK9/Pict-1.png"
+          src="https://weplystudio.github.io/audiomd/Pict%201.png"
           alt="Background"
           fill
           className="object-cover opacity-60"
@@ -64,7 +64,7 @@ export const EventDetails = () => {
         {/* Background Image - With Transparency */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://i.ibb.co.com/s933d4fP/Desain-tanpa-judul-20260313-163535-0000.png"
+            src="https://weplystudio.github.io/audiomd/Pict%204.png"
             alt="Section Background"
             fill
             className="object-cover object-center opacity-40"
@@ -82,7 +82,7 @@ export const EventDetails = () => {
               {/* Image Header */}
               <div className="relative h-64 w-full">
                 <Image
-                  src="https://i.ibb.co.com/F4gygw5V/Pict-2.png"
+                  src="https://weplystudio.github.io/audiomd/Pict%202.png"
                   alt="Holy Matrimony"
                   fill
                   className="object-cover"
@@ -141,7 +141,7 @@ export const EventDetails = () => {
               {/* Image Header */}
               <div className="relative h-64 w-full">
                 <Image
-                  src="https://i.ibb.co.com/S4nCM11q/Pict-3.png"
+                  src="https://weplystudio.github.io/audiomd/Pict%203.png"
                   alt="Traditional Celebration"
                   fill
                   className="object-cover"

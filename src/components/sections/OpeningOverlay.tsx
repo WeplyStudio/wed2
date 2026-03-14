@@ -27,7 +27,7 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="https://i.ibb.co.com/YKSVKK9/Pict-1.png"
+          src="https://weplystudio.github.io/audiomd/Pict%201.png"
           alt="Wedding Cover"
           fill
           className="object-cover opacity-60 scale-105"

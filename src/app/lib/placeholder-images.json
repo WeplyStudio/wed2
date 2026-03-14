@@ -4,43 +4,43 @@
     {
       "id": "hero-image",
       "description": "Elegant couple in traditional Batak attire",
-      "imageUrl": "https://picsum.photos/seed/wedding1/1200/800",
+      "imageUrl": "https://weplystudio.github.io/audiomd/Pict%201.png",
       "imageHint": "batak wedding"
     },
     {
       "id": "groom",
       "description": "Portrait of the groom",
-      "imageUrl": "https://i.ibb.co.com/ksSmfZh0/1773477380964.png",
+      "imageUrl": "https://weplystudio.github.io/audiomd/Groom.png",
       "imageHint": "groom portrait"
     },
     {
       "id": "bride",
       "description": "Portrait of the bride",
-      "imageUrl": "https://i.ibb.co.com/7tQNmQkT/1773477390210.png",
+      "imageUrl": "https://weplystudio.github.io/audiomd/Bride.png",
       "imageHint": "bride portrait"
     },
     {
       "id": "gallery-1",
       "description": "Momen Bahagia 1",
-      "imageUrl": "https://i.ibb.co.com/YKSVKK9/Pict-1.png",
+      "imageUrl": "https://weplystudio.github.io/audiomd/Pict%201.png",
       "imageHint": "wedding couple"
     },
     {
       "id": "gallery-2",
       "description": "Momen Bahagia 2",
-      "imageUrl": "https://i.ibb.co.com/mr1jLN1v/Pict-4.png",
+      "imageUrl": "https://weplystudio.github.io/audiomd/Pict%204.png",
       "imageHint": "wedding couple"
     },
     {
       "id": "gallery-3",
       "description": "Momen Bahagia 3",
-      "imageUrl": "https://i.ibb.co.com/F4gygw5V/Pict-2.png",
+      "imageUrl": "https://weplystudio.github.io/audiomd/Pict%202.png",
       "imageHint": "wedding couple"
     },
     {
       "id": "gallery-4",
       "description": "Momen Bahagia 4",
-      "imageUrl": "https://i.ibb.co.com/S4nCM11q/Pict-3.png",
+      "imageUrl": "https://weplystudio.github.io/audiomd/Pict%203.png",
       "imageHint": "wedding couple"
     }
   ]

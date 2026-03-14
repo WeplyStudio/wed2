@@ -13,7 +13,7 @@ import { InitialsBadge } from "@/components/ui/InitialsBadge";
 import Image from "next/image";
 
 export default function Home() {
-  const footerBgUrl = "https://i.ibb.co.com/mr1jLN1v/Pict-4.png";
+  const footerBgUrl = "https://weplystudio.github.io/audiomd/Pict%204.png";
 
   return (
     <main className="min-h-screen relative batak-pattern">

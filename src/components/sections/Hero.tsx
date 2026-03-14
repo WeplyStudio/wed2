@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 
 export const Hero = () => {
   const images = [
-    "https://i.ibb.co.com/YKSVKK9/Pict-1.png",
-    "https://i.ibb.co.com/mr1jLN1v/Pict-4.png",
-    "https://i.ibb.co.com/F4gygw5V/Pict-2.png",
-    "https://i.ibb.co.com/S4nCM11q/Pict-3.png"
+    "https://weplystudio.github.io/audiomd/Pict%201.png",
+    "https://weplystudio.github.io/audiomd/Pict%204.png",
+    "https://weplystudio.github.io/audiomd/Pict%202.png",
+    "https://weplystudio.github.io/audiomd/Pict%203.png"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,7 +20,7 @@ export const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3500); // Diubah menjadi 3,5 detik
+    }, 3500); 
     return () => clearInterval(timer);
   }, [images.length]);
 
