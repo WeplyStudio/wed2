@@ -1,8 +1,6 @@
-
 import { Hero } from "@/components/sections/Hero";
 import { Couple } from "@/components/sections/Couple";
 import { EventDetails } from "@/components/sections/EventDetails";
-import { Gallery } from "@/components/sections/Gallery";
 import { Guestbook } from "@/components/sections/Guestbook";
 import { Gift } from "@/components/sections/Gift";
 import { Toaster } from "@/components/ui/toaster";
@@ -24,7 +22,6 @@ export default function Home() {
       <InitialsBadge />
       <Couple />
       <EventDetails />
-      <Gallery />
       <Gift />
       <Guestbook />
       
