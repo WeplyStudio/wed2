@@ -82,7 +82,7 @@ export const EventDetails = () => {
               {/* Image Header */}
               <div className="relative h-64 w-full">
                 <Image
-                  src="https://picsum.photos/seed/ceremony/800/600"
+                  src="https://i.ibb.co.com/F4gygw5V/Pict-2.png"
                   alt="Holy Matrimony"
                   fill
                   className="object-cover"
@@ -141,7 +141,7 @@ export const EventDetails = () => {
               {/* Image Header */}
               <div className="relative h-64 w-full">
                 <Image
-                  src="https://picsum.photos/seed/reception/800/600"
+                  src="https://i.ibb.co.com/S4nCM11q/Pict-3.png"
                   alt="Traditional Celebration"
                   fill
                   className="object-cover"
