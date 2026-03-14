@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -14,9 +15,9 @@ import { ScrollReveal } from "../ui/ScrollReveal";
 export const Gallery = () => {
   const allGalleryImages = PlaceHolderImages.filter((img) => img.id.startsWith("gallery-"));
   
-  // Split images for slider and grid
-  const sliderImages = allGalleryImages.slice(0, 4);
-  const gridImages = allGalleryImages.slice(2, 8); // Showing some overlaps or unique ones for grid
+  // Use the available images for both slider and grid
+  const sliderImages = allGalleryImages;
+  const gridImages = allGalleryImages;
 
   return (
     <section id="gallery" className="py-24 bg-background overflow-hidden">
@@ -58,7 +59,7 @@ export const Gallery = () => {
         </ScrollReveal>
 
         {/* Bottom Grid Section */}
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-3 md:gap-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {gridImages.map((image, index) => (
             <ScrollReveal key={index} delay={index * 100}>
               <div className="relative aspect-square overflow-hidden rounded-xl shadow-sm bg-muted group">

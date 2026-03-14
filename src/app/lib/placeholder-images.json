@@ -21,57 +21,27 @@
     },
     {
       "id": "gallery-1",
-      "description": "Couple holding hands",
-      "imageUrl": "https://picsum.photos/seed/gal1/800/1000",
+      "description": "Momen Bahagia 1",
+      "imageUrl": "https://i.ibb.co.com/YKSVKK9/Pict-1.png",
       "imageHint": "wedding couple"
     },
     {
       "id": "gallery-2",
-      "description": "Wedding rings",
-      "imageUrl": "https://picsum.photos/seed/gal2/800/1000",
-      "imageHint": "wedding rings"
+      "description": "Momen Bahagia 2",
+      "imageUrl": "https://i.ibb.co.com/mr1jLN1v/Pict-4.png",
+      "imageHint": "wedding couple"
     },
     {
       "id": "gallery-3",
-      "description": "Couple laughing",
-      "imageUrl": "https://picsum.photos/seed/gal3/800/1000",
-      "imageHint": "happy couple"
+      "description": "Momen Bahagia 3",
+      "imageUrl": "https://i.ibb.co.com/F4gygw5V/Pict-2.png",
+      "imageHint": "wedding couple"
     },
     {
       "id": "gallery-4",
-      "description": "Couple at sunset",
-      "imageUrl": "https://picsum.photos/seed/gal4/800/1000",
-      "imageHint": "couple sunset"
-    },
-    {
-      "id": "gallery-5",
-      "description": "Close up portrait",
-      "imageUrl": "https://picsum.photos/seed/gal5/800/1000",
-      "imageHint": "wedding portrait"
-    },
-    {
-      "id": "gallery-6",
-      "description": "Together forever",
-      "imageUrl": "https://picsum.photos/seed/gal6/800/1000",
-      "imageHint": "couple happy"
-    },
-    {
-      "id": "gallery-7",
-      "description": "Beautiful moment",
-      "imageUrl": "https://picsum.photos/seed/gal7/800/1000",
-      "imageHint": "wedding moment"
-    },
-    {
-      "id": "gallery-8",
-      "description": "Sweet glance",
-      "imageUrl": "https://picsum.photos/seed/gal8/800/1000",
-      "imageHint": "couple glance"
-    },
-    {
-      "id": "gallery-9",
-      "description": "Walking together",
-      "imageUrl": "https://picsum.photos/seed/gal9/800/1000",
-      "imageHint": "couple walking"
+      "description": "Momen Bahagia 4",
+      "imageUrl": "https://i.ibb.co.com/S4nCM11q/Pict-3.png",
+      "imageHint": "wedding couple"
     }
   ]
 }

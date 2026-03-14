@@ -1,3 +1,4 @@
+
 "use client";
 
 import { MapPin, Clock, ExternalLink, Leaf } from "lucide-react";
@@ -12,11 +13,11 @@ export const EventDetails = () => {
       {/* Verse & Countdown Hero Section */}
       <div className="relative min-h-screen w-full flex items-center justify-center py-24 overflow-hidden">
         <Image
-          src="https://picsum.photos/seed/verse/1200/800"
+          src="https://i.ibb.co.com/YKSVKK9/Pict-1.png"
           alt="Background"
           fill
           className="object-cover opacity-60"
-          data-ai-hint="wedding couple"
+          priority
         />
         <div className="absolute inset-0 bg-black/60" />
         
