@@ -12,6 +12,9 @@ export const MusicPlayer = () => {
   useEffect(() => {
     const handleOpenInvitation = () => {
       if (audioRef.current && !isPlaying) {
+        // Mengatur waktu mulai ke detik 23
+        audioRef.current.currentTime = 23;
+        
         audioRef.current.play()
           .then(() => {
             setIsPlaying(true);
