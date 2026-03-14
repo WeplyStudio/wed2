@@ -20,7 +20,7 @@ export const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 2000);
+    }, 3500); // Diubah menjadi 3,5 detik
     return () => clearInterval(timer);
   }, [images.length]);
 
@@ -33,7 +33,7 @@ export const Hero = () => {
             key={src}
             className={cn(
               "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-              idx === currentIndex ? "opacity-90 scale-105" : "opacity-0 scale-100"
+              idx === currentIndex ? "opacity-90" : "opacity-0"
             )}
           >
             <Image
