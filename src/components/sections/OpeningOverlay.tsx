@@ -1,10 +1,10 @@
+
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
-import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 import { cn } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
 import { useFirebase, initiateAnonymousSignIn } from "@/firebase";
@@ -12,18 +12,13 @@ import { useFirebase, initiateAnonymousSignIn } from "@/firebase";
 const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
   const searchParams = useSearchParams();
   const guestName = searchParams.get("name") || "Nama Tamu";
-  const heroImg = PlaceHolderImages.find((img) => img.id === "hero-image");
   const { auth } = useFirebase();
 
   const handleOpenClick = () => {
-    // Initiate anonymous sign-in when the invitation is opened
     if (auth) {
       initiateAnonymousSignIn(auth);
     }
-    
-    // Dispatch a custom event to trigger music autoplay in MusicPlayer
     window.dispatchEvent(new CustomEvent('open-invitation'));
-    
     onOpen();
   };
 
@@ -32,7 +27,7 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src={heroImg?.imageUrl || ""}
+          src="https://i.ibb.co.com/YKSVKK9/Pict-1.png"
           alt="Wedding Cover"
           fill
           className="object-cover opacity-60 scale-105"
@@ -41,10 +36,9 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
       </div>
 
-      {/* Content Layer - Positioned at bottom with tight spacing */}
+      {/* Content Layer */}
       <div className="relative z-10 flex flex-col items-center justify-end text-center px-6 h-full w-full max-w-lg mx-auto pb-16 md:pb-24">
         
-        {/* Wedding Invitation Label */}
         <div className="space-y-0.5 mb-2 animate-in fade-in slide-in-from-top-10 duration-1000">
           <h2 className="font-headline text-2xl md:text-3xl text-primary font-medium italic leading-none">
             Wedding Invitation
@@ -54,14 +48,12 @@ const OverlayContent = ({ onOpen }: { onOpen: () => void }) => {
           </p>
         </div>
 
-        {/* Main Names */}
         <div className="mb-6 animate-in fade-in zoom-in duration-1000 delay-300">
           <h1 className="font-headline text-5xl md:text-7xl text-primary leading-[1] drop-shadow-lg">
             Binsar &<br />Indrawati
           </h1>
         </div>
 
-        {/* Special Invite Section */}
         <div className="space-y-4 mb-2 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
           <div className="space-y-0.5">
             <p className="text-white/80 font-serif italic text-sm md:text-base leading-tight">

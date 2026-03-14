@@ -1,29 +1,55 @@
+
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 import { Countdown } from "../ui/Countdown";
 import { ScrollReveal } from "../ui/ScrollReveal";
+import { cn } from "@/lib/utils";
 
 export const Hero = () => {
-  const heroImg = PlaceHolderImages.find((img) => img.id === "hero-image");
+  const images = [
+    "https://i.ibb.co.com/YKSVKK9/Pict-1.png",
+    "https://i.ibb.co.com/mr1jLN1v/Pict-4.png",
+    "https://i.ibb.co.com/F4gygw5V/Pict-2.png",
+    "https://i.ibb.co.com/S4nCM11q/Pict-3.png"
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [images.length]);
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image Container */}
+      {/* Slideshow Background */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={heroImg?.imageUrl || ""}
-          alt="Wedding Background"
-          fill
-          className="object-cover opacity-90 scale-105 animate-fade-in"
-          priority
-          data-ai-hint="elegant couple"
-        />
+        {images.map((src, idx) => (
+          <div
+            key={src}
+            className={cn(
+              "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+              idx === currentIndex ? "opacity-90 scale-105" : "opacity-0 scale-100"
+            )}
+          >
+            <Image
+              src={src}
+              alt={`Wedding Background ${idx + 1}`}
+              fill
+              className="object-cover"
+              priority={idx === 0}
+              data-ai-hint="wedding couple"
+            />
+          </div>
+        ))}
         <div className="absolute inset-0 hero-gradient z-10" />
       </div>
 
-      {/* Main Content - Pushed to the bottom */}
+      {/* Main Content */}
       <div className="relative z-20 w-full h-full flex flex-col items-center justify-end px-4 pb-24 md:pb-32">
         
         {/* Header Label */}
