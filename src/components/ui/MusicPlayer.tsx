@@ -46,7 +46,7 @@ export const MusicPlayer = () => {
       <audio
         ref={audioRef}
         loop
-        src="https://weplystudio.github.io/audiomd/Bona%20Jeges.mp3"
+        src="https://weplystudio.github.io/audiomd/DONGAN%20MATUA%20(Teman%20Hidup)%20%20Enny%20Sinaga%20Ft.%20Reezal%20Nainggolan%20(Anju%20Trio)%20Official%20Video%20Lirik.mp3"
       />
       <Button
         size="icon"
