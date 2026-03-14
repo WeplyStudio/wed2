@@ -1,3 +1,4 @@
+
 import { Hero } from "@/components/sections/Hero";
 import { Couple } from "@/components/sections/Couple";
 import { EventDetails } from "@/components/sections/EventDetails";
@@ -59,9 +60,6 @@ export default function Home() {
             <ScrollReveal className="space-y-3 max-w-md mx-auto" delay={200}>
               <p className="text-white/90 text-xs md:text-sm leading-relaxed font-body italic">
                 Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kami.
-              </p>
-              <p className="text-white/60 text-[9px] md:text-[10px] font-body italic uppercase tracking-widest">
-                Wassalamu'alaikum warahmatullahi wabarakatuh
               </p>
             </ScrollReveal>
           </div>
